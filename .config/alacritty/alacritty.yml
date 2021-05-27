@@ -1,0 +1,15 @@
+import:
+  - /home/grfreire/.alacritty/themes/dracula/dracula.yml
+
+
+window:
+  dimensions:
+      columns: 120
+      lines: 35
+
+scrolling:
+  history: 100000
+
+font:
+  normal:
+    family: 'Fira Code'
