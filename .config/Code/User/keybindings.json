@@ -1,0 +1,11 @@
+[
+  {
+    "key": "ctrl+'",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }
+]

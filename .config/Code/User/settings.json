@@ -1,0 +1,59 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Omni",
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Droid Sans Fallback', monospace",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 24,
+  "explorer.compactFolders": false,
+  "editor.renderLineHighlight": "gutter",
+  "workbench.editor.labelFormat": "short",
+  "workbench.startupEditor": "none",
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "schemas": "class",
+    "typeorm": "database",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules": "components",
+    "implementations": "core",
+    "dtos": "typescript",
+    "fakes": "mock"
+  },
+  "material-icon-theme.files.associations": {
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.glsl": "drawio"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
+  },
+  "cSpell.userWords": [
+    "Rugai",
+    "Freire",
+    "GRFreire"
+  ],
+  "cSpell.language": "en,pt",
+  "extensions.ignoreRecommendations": false,
+  "omnisharp.useGlobalMono": "always",
+  "C_Cpp.updateChannel": "Insiders",
+  "elixirLS.dialyzerEnabled": false,
+  "elixirLS.suggestSpecs": false,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+  },
+  "terminal.integrated.env.linux": {
+    "INTEG_EMU": "vscode"
+  }
+}
