@@ -8,6 +8,7 @@
 set guifont=Fira\ Code\ Regular\ 11
 
 :set number
+:set relativenumber
 :set autoindent
 :set expandtab
 :set tabstop=4
