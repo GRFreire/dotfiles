@@ -93,5 +93,5 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 ### zinit settinng things up - end
 
-# Run color-scripts
+# Run color-scripts https://github.com/GRFreire/shell-color-scripts
 colorscript random
