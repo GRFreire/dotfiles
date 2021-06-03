@@ -1,17 +1,17 @@
 #     ____ ____  _____         _          
 #    / ___|  _ \|  ___| __ ___(_)_ __ ___ 
 #   | |  _| |_) | |_ | '__/ _ \ | '__/ _ \     Guilherme Rugai Freire
-#   | |_| |  _ <|  _|| | |  __/ | | |  __/	   https://grfreire.com
+#   | |_| |  _ <|  _|| | |  __/ | | |  __/     https://grfreire.com
 #    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 #                                         
 
 [user]
-	email = 41879254+GRFreire@users.noreply.github.com
-	name = Guilherme Rugai Freire
-	signingkey = C9D6D9025A4CC2987224771986DC96AE4AEBC162
+  email = 41879254+GRFreire@users.noreply.github.com
+  name = Guilherme Rugai Freire
+  signingkey = C9D6D9025A4CC2987224771986DC96AE4AEBC162
 
 [core]
-	editor = vim
+  editor = vim
 
 [alias]
   st = status -sb
@@ -21,4 +21,4 @@
   discard = checkout --
 
 [commit]
-	gpgsign = true
+  gpgsign = true
