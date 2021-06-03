@@ -20,3 +20,5 @@ scrolling:
 font:
   normal:
     family: 'Fira Code'
+
+background_opacity: 0.8
