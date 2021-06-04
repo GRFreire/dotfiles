@@ -230,12 +230,6 @@ def main_bar():
                 background=colors["background"],
                 foreground=colors["background"],
             ),
-            widget.TextBox(text="-"),
-            widget.Sep(
-                linewidth=8,
-                background=colors["background"],
-                foreground=colors["background"],
-            ),
             widget.WindowName(),
             widget.Notify(),
             widget.Systray(padding=10),
@@ -285,12 +279,6 @@ def aux_bar():
         left=[
             widget.CurrentLayoutIcon(scale=0.65),
             group_box(),
-            widget.Sep(
-                linewidth=8,
-                background=colors["background"],
-                foreground=colors["background"],
-            ),
-            widget.TextBox(text="-"),
             widget.Sep(
                 linewidth=8,
                 background=colors["background"],
