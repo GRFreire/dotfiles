@@ -31,7 +31,7 @@ keys = [
     Key([MOD], "w", lazy.spawn(WEB), desc="Open web browser"),
     Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
     # Closes window.
-    Key([MOD, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
     # Switch between windows
     Key([MOD], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
