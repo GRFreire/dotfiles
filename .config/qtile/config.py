@@ -353,8 +353,8 @@ auto_minimize = True
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser("~/.config/qtile/autostart.sh")
-    subprocess.call([home])
+    autostart_script = os.path.expanduser("~/.config/qtile/autostart.sh")
+    subprocess.call([autostart_script])
 
 
 @hook.subscribe.client_new
