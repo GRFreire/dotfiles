@@ -15,6 +15,7 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
 MOD = "mod4"
+ALT = "mod1"
 TERMINAL = "alacritty"
 LAUNCHER = "rofi -show drun"
 WEB = "google-chrome"
@@ -36,7 +37,7 @@ keys = [
     Key([MOD], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
     Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([MOD], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([ALT], "Tab", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns.
     Key(
         [MOD, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
