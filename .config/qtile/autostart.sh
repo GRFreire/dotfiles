@@ -6,6 +6,9 @@
 # Start compositor
 picom --experimental-backends &
 
+# Start notification server
+dunst &
+
 # Display background image
 nitrogen --restore
 
