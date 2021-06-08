@@ -18,7 +18,7 @@ MOD = "mod4"
 ALT = "mod1"
 TERMINAL = "alacritty"
 LAUNCHER = "rofi -show drun"
-WEB = "google-chrome"
+WEB = "firefox"
 FILE_MANAGER = "nautilus -w"
 POWER_MENU = os.path.expanduser(
     "~/.local/bin/spm"
