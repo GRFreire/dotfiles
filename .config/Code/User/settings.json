@@ -8,6 +8,7 @@
   "editor.renderLineHighlight": "gutter",
   "workbench.editor.labelFormat": "short",
   "workbench.startupEditor": "none",
+  "files.defaultLanguage": " ${activeEditorLanguage}",
   "material-icon-theme.folders.associations": {
     "infra": "app",
     "entities": "class",
