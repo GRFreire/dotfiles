@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Start polkit agent
+polkit-dumb-agent &
+
 # Enable numlock
 /usr/bin/numlockx
 
