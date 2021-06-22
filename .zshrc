@@ -5,19 +5,21 @@
 #    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 #                                         
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Plugins
-plugins=()
 
 # Themes
 ZSH_THEME="robbyrussell"
 
+# Oh my zsh
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-# Themes
-ZSH_THEME="spaceship"
+### zinit plugins - start
+source $HOME/.zinit/bin/zinit.zsh
+
+zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+### zinit plugins - end
 
 # $1 = path to export
 try_export_path() {
@@ -69,14 +71,6 @@ export FrameworkPathOverride=/etc/mono/4.5
 
 # Path for cuda
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/cuda/lib64
-
-### zinit plugins - start
-source $HOME/.zinit/bin/zinit.zsh
-
-zinit light zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-### zinit plugins - end
 
 # Run color-scripts https://github.com/GRFreire/shell-color-scripts
 colorscript random
