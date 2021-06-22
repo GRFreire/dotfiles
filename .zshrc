@@ -50,8 +50,10 @@ alias cat="batcat --paging=never --style=header,grid"
 alias ls="exa --color=always --group-directories-first"
 
 # This loads nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
+nvm() {
+  source $HOME/.nvm/nvm.sh; nvm "$@"
+}
 
 # Android Studio
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
