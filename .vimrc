@@ -19,15 +19,15 @@ set guifont=Fira\ Code\ Regular\ 11
 
 call plug#begin()
 
-Plug 'https://github.com/ap/vim-css-color'
-Plug 'https://github.com/cocopon/iceberg.vim'
+Plug 'romgrk/doom-one.vim'
+Plug 'sheerun/vim-polyglot'
 
 set encoding=UTF-8
 
 call plug#end()
 
 set background=dark
-:colorscheme iceberg
+:colorscheme doom-one
 
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall
