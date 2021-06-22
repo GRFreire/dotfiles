@@ -9,7 +9,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Plugins
-plugins=(git)
+plugins=()
 
 # Themes
 ZSH_THEME="robbyrussell"
