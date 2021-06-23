@@ -1,3 +1,6 @@
 [submodule ".alacritty/themes/dracula"]
 	path = .alacritty/themes/dracula
 	url = git@github.com:dracula/alacritty.git
+[submodule ".config/spicetify/Themes"]
+	path = .config/spicetify/Themes
+	url = git@github.com:morpheusthewhite/spicetify-themes.git
