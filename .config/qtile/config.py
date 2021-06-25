@@ -247,6 +247,9 @@ def main_bar():
                 widget.CurrentLayout(),
             ],
             [
+                widget.Memory(format='Memory {MemPercent}%'),
+            ],
+            [
                 widget.TextBox(
                     text="Vol:",
                     mouse_callbacks={
