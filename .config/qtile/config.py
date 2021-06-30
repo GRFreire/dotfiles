@@ -21,7 +21,7 @@ LAUNCHER = "rofi -show drun"
 WEB = "firefox"
 FILE_MANAGER = "nautilus -w"
 POWER_MENU = os.path.expanduser(
-    "~/.local/bin/spm"
+    "~/.local/bin/simple-power-menu"
 )  # https://github.com/GRFreire/simple-power-menu
 
 keys = [
