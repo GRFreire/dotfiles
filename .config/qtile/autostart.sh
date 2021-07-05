@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Start polkit agent
-polkit-dumb-agent &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Enable numlock
 /usr/bin/numlockx
