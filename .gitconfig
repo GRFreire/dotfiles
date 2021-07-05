@@ -27,3 +27,6 @@
 
 [pager]
     diff = delta
+
+[init]
+	defaultBranch = master
