@@ -49,6 +49,9 @@ alias cat="bat --paging=never --style=header,grid"
 # Alias to exa instead of ls
 alias ls="exa --color=always --group-directories-first"
 
+# Alias to nvim instead of vim
+alias vim="nvim"
+
 # This loads nvm
 export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
 nvm() {
