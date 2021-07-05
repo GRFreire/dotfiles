@@ -232,7 +232,6 @@ def main_bar():
                 foreground=colors["background"],
             ),
             widget.WindowName(),
-            widget.Notify(),
             widget.Systray(padding=10),
         ],
         right=[
