@@ -11,7 +11,7 @@
   signingkey = 1D0FA4387C5873294D5863980F9FE41723A8A297
 
 [core]
-  editor = vim
+  editor = nvim
 
 [alias]
   st = status -sb

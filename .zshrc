@@ -52,6 +52,8 @@ alias ls="exa --color=always --group-directories-first"
 # Alias to nvim instead of vim
 alias vim="nvim"
 
+export EDITOR=nvim
+
 # This loads nvm
 export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
 nvm() {
