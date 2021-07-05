@@ -43,8 +43,8 @@ alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias python="python3"
 alias pip="pip3"
 
-# Alias to batcat instead of cat
-alias cat="batcat --paging=never --style=header,grid"
+# Alias to bat instead of cat
+alias cat="bat --paging=never --style=header,grid"
 
 # Alias to exa instead of ls
 alias ls="exa --color=always --group-directories-first"

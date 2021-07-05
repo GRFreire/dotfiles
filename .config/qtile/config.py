@@ -239,7 +239,7 @@ def main_bar():
             [
                 widget.TextBox(text="⟳", fontsize=18),
                 widget.CheckUpdates(
-                    distro="Ubuntu", display_format="{updates} Updates"
+                    distro="Arch", display_format="{updates} Updates"
                 ),
             ],
             [
@@ -328,7 +328,7 @@ floating_layout = layout.Floating(
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
-        Match(title="pinentry"),  # GPG key password entry
+        Match(title="pinentry-gtk-2"),  # GPG key password entry
         Match(wm_class="gnome-calculator"),  # Calculator
         Match(wm_class="pavucontrol"),  # Audio mixer
         Match(wm_class="gnome-calendar"),  # Calendar
