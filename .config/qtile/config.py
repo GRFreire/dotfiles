@@ -242,7 +242,7 @@ def main_bar():
             [
                 widget.TextBox(text="⟳", fontsize=18),
                 widget.CheckUpdates(
-                    distro="Arch", display_format="{updates} Updates"
+                    distro="Arch", custom_command="checkupdates", display_format="{updates} Updates"
                 ),
             ],
             [
