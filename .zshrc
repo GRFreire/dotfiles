@@ -52,6 +52,10 @@ alias ls="exa --color=always --group-directories-first"
 # Alias to nvim instead of vim
 alias vim="nvim"
 
+# Window swallowing with devour
+alias mpv="devour mpv"
+alias sxiv="devour sxiv"
+
 export EDITOR=nvim
 
 # This loads nvm
