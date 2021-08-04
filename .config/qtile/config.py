@@ -69,6 +69,8 @@ keys = [
     # QTile
     Key([MOD, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    # System
+    Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
 ]
 
 group_names = [
