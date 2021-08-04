@@ -21,6 +21,7 @@ LAUNCHER = "rofi -show drun"
 WEB = "firefox"
 FILE_MANAGER = "nautilus -w"
 SCREENSHOT = "gnome-screenshot"
+SCREENSHOT_UTILITY = "gnome-screenshot -i"
 POWER_MENU = os.path.expanduser(
     "~/.local/bin/simple-power-menu"
 )  # https://github.com/GRFreire/simple-power-menu
@@ -74,7 +75,7 @@ keys = [
     # System
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
-    Key([MOD], "Print", lazy.spawn(f"{SCREENSHOT} -i"), desc="Open screenshot utility"),
+    Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
     # Media
     Key([], "XF86AudioPlay", lazy.spawn(f"{MEDIA_CONTROL} play"), desc="Media control - play"),
     Key([], "XF86AudioStop", lazy.spawn(f"{MEDIA_CONTROL} stop"), desc="Media control - stop"),
