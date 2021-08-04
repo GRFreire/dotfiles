@@ -27,6 +27,7 @@ WEB_QUICK_OPEN = os.path.expanduser(
     "~/.local/bin/firefox-quick-keywords"
 )  # https://github.com/GRFreire/firefox-quick-keywords
 
+MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
 keys = [
     # Launch programs
     Key([MOD], "Return", lazy.spawn(TERMINAL), desc="Launch terminal"),
@@ -71,6 +72,14 @@ keys = [
     Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # System
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
+    # Media
+    Key([], "XF86AudioPlay", lazy.spawn(f"{MEDIA_CONTROL} play"), desc="Media control - play"),
+    Key([], "XF86AudioStop", lazy.spawn(f"{MEDIA_CONTROL} stop"), desc="Media control - stop"),
+    Key([], "XF86AudioNext", lazy.spawn(f"{MEDIA_CONTROL} next"), desc="Media control - next"),
+    Key([], "XF86AudioPrev", lazy.spawn(f"{MEDIA_CONTROL} prev"), desc="Media control - prev"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn(f"{MEDIA_CONTROL} vol_up"), desc="Media control - volume up"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn(f"{MEDIA_CONTROL} vol_down"), desc="Media control - volume down"),
+    Key([], "XF86AudioMute", lazy.spawn(f"{MEDIA_CONTROL} vol_mute"), desc="Media control - mute volume"),
 ]
 
 group_names = [
