@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Start polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
