@@ -12,6 +12,9 @@ picom --experimental-backends &
 # Start notification server
 dunst &
 
+# Start clipboard manager
+greenclip daemon &
+
 # Display background image
 nitrogen --restore
 
