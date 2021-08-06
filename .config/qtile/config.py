@@ -8,6 +8,7 @@
 import time
 import os
 import subprocess
+import psutil
 from typing import List  # noqa: F401
 
 from libqtile import bar, layout, widget, qtile, hook
@@ -378,6 +379,26 @@ def autostart():
     autostart_script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.call([autostart_script])
 
+
+@hook.subscribe.client_new
+def swallow(window):
+    pid = window.window.get_net_wm_pid()                                                       # Window PID
+    ppid = psutil.Process(pid).ppid()                                                          # Parent Window PID
+    cpids = {c.window.get_net_wm_pid(): wid for wid, c in window.qtile.windows_map.items()}    # All Windows PIDs
+    for _ in range(len(cpids)):
+        if not ppid:
+            return
+        if ppid in cpids:
+            parent = window.qtile.windows_map.get(cpids[ppid])
+            parent.minimized = True
+            window.parent = parent
+            return
+        ppid = psutil.Process(ppid).ppid()
+
+@hook.subscribe.client_killed
+def unswallow(window):
+    if hasattr(window, 'parent'):
+        window.parent.minimized = False
 
 @hook.subscribe.client_new
 def try_regroup_window(client):
