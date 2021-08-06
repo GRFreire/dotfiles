@@ -17,3 +17,6 @@ nitrogen --restore
 
 # Start network manager applet (systray)
 nm-applet &
+
+# Start volume bar
+~/.config/xob/volume.sh
