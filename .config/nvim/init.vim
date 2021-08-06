@@ -16,6 +16,7 @@ set guifont=Fira\ Code\ Regular\ 11
 :set smarttab
 :set softtabstop=4
 :set mouse=a
+:set clipboard=unnamedplus
 
 call plug#begin()
 
