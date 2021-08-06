@@ -70,6 +70,8 @@ keys = [
     Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Toggle between different layouts.
     Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([MOD], "m", lazy.window.toggle_fullscreen(), desc="Toggle maximize state of the window"),
+    Key([MOD], "t", lazy.window.toggle_floating(), desc="Toggle floating state of the window"),
     # QTile
     Key([MOD, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
