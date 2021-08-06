@@ -352,6 +352,18 @@ floating_layout = layout.Floating(
         Match(wm_class="gnome-calendar"),  # Calendar
     ]
 )
+
+# Exceptions rules to disable floating in default config
+@hook.subscribe.client_new
+def disable_floating(window):
+    rules = [
+        Match(wm_class="mpv")
+    ]
+
+    if any(window.match(rule) for rule in rules):
+        window.togroup(qtile.current_group.name)
+        window.cmd_disable_floating()
+
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
