@@ -52,6 +52,9 @@ alias ls="exa --color=always --group-directories-first"
 # Alias to nvim instead of vim
 alias vim="nvim"
 
+# Fix zathura window swallowing
+alias zathura="devour zathura"
+
 export EDITOR=nvim
 
 # This loads nvm
