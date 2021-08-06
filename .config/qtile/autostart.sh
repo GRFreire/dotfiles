@@ -19,4 +19,5 @@ nitrogen --restore
 nm-applet &
 
 # Start volume bar
-~/.config/xob/volume.sh
+~/.config/xob/volume.sh &
+
