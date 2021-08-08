@@ -390,6 +390,15 @@ def autostart():
 
 @hook.subscribe.client_new
 def swallow(window):
+    swallow_from=[
+        Match(wm_class="Alacritty"),
+    ]
+
+    not_swallow=[]
+
+    if any(window.match(rule) for rule in not_swallow):
+        return
+
     pid = window.window.get_net_wm_pid()                                                       # Window PID
     ppid = psutil.Process(pid).ppid()                                                          # Parent Window PID
     cpids = {c.window.get_net_wm_pid(): wid for wid, c in window.qtile.windows_map.items()}    # All Windows PIDs
@@ -398,6 +407,8 @@ def swallow(window):
             return
         if ppid in cpids:
             parent = window.qtile.windows_map.get(cpids[ppid])
+            if not any(parent.match(rule) for rule in swallow_from):
+                return
             parent.minimized = True
             window.parent = parent
             return
