@@ -110,10 +110,10 @@ groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
 for i, (name, kwargs) in enumerate(group_names, 1):
     # Switch to another group
-    keys.append(Key([MOD], str(i), lazy.group[name].toscreen()))
+    keys.append(Key([MOD], str(i), lazy.group[name].toscreen(), desc=f"Switch to group {name}"))
 
     # Send current window to another group
-    keys.append(Key([MOD, "shift"], str(i), lazy.window.togroup(name)))
+    keys.append(Key([MOD, "shift"], str(i), lazy.window.togroup(name), desc=f"Send current window to group {name}"))
 
 
 colors = {
