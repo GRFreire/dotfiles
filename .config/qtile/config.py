@@ -30,6 +30,7 @@ POWER_MENU = os.path.expanduser(
 WEB_QUICK_OPEN = os.path.expanduser(
     "~/.local/bin/firefox-quick-keywords"
 )  # https://github.com/GRFreire/firefox-quick-keywords
+SHOW_KEYBINDS = "python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
 keys = [
@@ -76,6 +77,7 @@ keys = [
     # QTile
     Key([MOD, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([MOD], "slash", lazy.spawn(SHOW_KEYBINDS), desc="Show list of qtile keybinds"),
     # System
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
@@ -356,6 +358,7 @@ floating_layout = layout.Floating(
         Match(wm_class="gnome-calculator"),  # Calculator
         Match(wm_class="pavucontrol"),  # Audio mixer
         Match(wm_class="gnome-calendar"),  # Calendar
+        Match(wm_class="yad"),  # Yad
     ]
 )
 
