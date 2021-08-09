@@ -13,6 +13,9 @@ ZSH_THEME="robbyrussell"
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
+# Set cursor to beam shape
+echo -ne '\e[5 q'
+
 ### zinit plugins - start
 source $HOME/.zinit/bin/zinit.zsh
 
