@@ -1,35 +1,15 @@
 #!/bin/sh
 
-control_play() {
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-    mpc toggle
-}
-
-control_stop() {
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
-    mpc stop
-}
-
-control_next() {
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-    mpc next
-}
-
-control_prev() {
-    dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-    mpc prev
-}
-
 case $1 in
     # Control
     play )
-        control_play ;;
+        playerctl play-pause ;;
     stop )
-        control_stop ;;
+        playerctl stop ;;
     next )
-        control_next ;;
+        playerctl next ;;
     prev )
-        control_prev ;;
+        playerctl previous ;;
     
     # Volume
     vol_up )
