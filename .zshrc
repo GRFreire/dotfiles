@@ -56,6 +56,7 @@ alias vim="nvim"
 alias zathura="devour zathura"
 
 export EDITOR=nvim
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # This loads nvm
 export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
