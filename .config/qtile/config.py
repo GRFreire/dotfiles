@@ -74,6 +74,7 @@ keys = [
     Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([MOD], "m", lazy.window.toggle_fullscreen(), desc="Toggle maximize state of the window"),
     Key([MOD], "t", lazy.window.toggle_floating(), desc="Toggle floating state of the window"),
+    Key([MOD, "shift"], "t", lazy.function(lambda q: toggle_swallow(q.current_window)), desc="Toggle swallow state of the window"),
     # QTile
     Key([MOD, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([MOD, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -389,7 +390,7 @@ def autostart():
 
 
 @hook.subscribe.client_new
-def swallow(window):
+def try_swallow(window):
     swallow_from=[
         Match(wm_class="Alacritty"),
     ]
@@ -397,6 +398,10 @@ def swallow(window):
     not_swallow=[]
 
     if any(window.match(rule) for rule in not_swallow):
+        return
+
+    if hasattr(window, 'parent'):
+        swallow(window, window.parent)
         return
 
     pid = window.window.get_net_wm_pid()                                                       # Window PID
@@ -409,15 +414,30 @@ def swallow(window):
             parent = window.qtile.windows_map.get(cpids[ppid])
             if not any(parent.match(rule) for rule in swallow_from):
                 return
-            parent.minimized = True
-            window.parent = parent
+
+            swallow(window, parent)
             return
         ppid = psutil.Process(ppid).ppid()
 
+
+def swallow(window, parent):
+    parent.minimized = True
+    window.parent = parent
+
 @hook.subscribe.client_killed
-def unswallow(window):
+def try_unswallow(window):
     if hasattr(window, 'parent'):
-        window.parent.minimized = False
+        unswallow(window.parent)
+
+def unswallow(parent):
+    parent.minimized = False
+
+def toggle_swallow(window):
+    if hasattr(window, 'parent'):
+        if window.parent.minimized:
+            unswallow(window.parent)
+        else:
+            swallow(window, window.parent)
 
 @hook.subscribe.client_new
 def try_regroup_window(client):
