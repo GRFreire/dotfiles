@@ -44,6 +44,9 @@ alias vim="nvim"
 # Fix zathura window swallowing
 alias zathura="devour zathura"
 
+# Allow zsh to "folow" ranger
+alias ranger="source ranger"
+
 # This loads nvm
 export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
 nvm() {
