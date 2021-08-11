@@ -7,6 +7,8 @@
 #    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 #                                         
 
+. "$HOME/.id.profile"
+
 ### Default programs ###
 export EDITOR="nvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
