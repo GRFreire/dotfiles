@@ -23,6 +23,8 @@ try_export_path() {
   fi
 }
 
+try_export_path $HOME/.scripts/bin
+
 try_export_path $HOME/.bin
 
 try_export_path $HOME/.local/bin
