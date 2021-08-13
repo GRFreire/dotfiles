@@ -316,6 +316,8 @@ def aux_bar():
                 foreground=colors["background"],
             ),
             widget.WindowName(),
+            widget.Memory(format='Memory {MemPercent}%'),
+            widget.CPU(format='CPU {load_percent}%'),
         ]
     )
 
