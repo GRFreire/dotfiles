@@ -15,6 +15,8 @@ source $ZSH/oh-my-zsh.sh
 # Set cursor to beam shape
 echo -ne '\e[5 q'
 
+export HISTORY_IGNORE="ce"
+
 ### zinit plugins - start
 source $HOME/.zinit/bin/zinit.zsh
 
