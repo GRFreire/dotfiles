@@ -5,8 +5,6 @@
 #    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 #                                         
 
-source ~/.profile
-
 # Themes
 ZSH_THEME="robbyrussell"
 
