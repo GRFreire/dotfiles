@@ -454,6 +454,7 @@ def try_regroup_window(client):
         "virt-manager": "SYS",
         "baobab": "SYS",
         "gnome-disks": "SYS",
+        "bitwarden": "SYS",
         "gedit": "DOC",
         "discord": "CHAT",
         "microsoft teams - preview": "CHAT",
@@ -467,6 +468,7 @@ def try_regroup_window(client):
     # Notion for class is notion-nativefier-xxxx for example
     apps_wm_class_incomplete = {
         "notion": "DOC",
+        "todoist": "DOC",
     }
 
     wm_class = client.window.get_wm_class()[0]
