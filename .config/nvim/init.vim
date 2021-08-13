@@ -24,6 +24,10 @@ Plug 'romgrk/doom-one.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 set encoding=UTF-8
 
@@ -31,8 +35,14 @@ call plug#end()
 
 set background=dark
 :colorscheme doom-one
+
 let g:airline_theme='deus'
 let g:airline_symbols_ascii = 1
+
+autocmd BufEnter * lcd %:p:h
+nnoremap <C-b> :NERDTreeToggle<CR>
+
+let g:NERDTreeGitStatusUseNerdFonts = 1
 
 " --- Just Some Notes ---
 " :PlugClean :PlugInstall
