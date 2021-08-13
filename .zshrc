@@ -28,6 +28,10 @@ zinit light zsh-users/zsh-completions
 # Alias config to manage dotfiles with git
 alias config="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
 
+# Config Edit
+alias ce="config ls-tree -r master --name-only | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}' | xargs -r $EDITOR"
+bindkey -s '^e' 'ce\n'
+
 # Alias for python3
 alias python="python3"
 alias pip="pip3"

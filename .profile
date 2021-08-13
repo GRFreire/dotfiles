@@ -31,6 +31,9 @@ try_export_path $HOME/.yarn/bin
 
 try_export_path $HOME/.cargo/bin
 
+# Fzf options
+export FZF_DEFAULT_OPTS="--reverse --cycle --margin 0,1"
+
 # Android Studio
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export ANDROID_HOME=$HOME/Android/Sdk
