@@ -30,6 +30,9 @@ POWER_MENU = os.path.expanduser(
 WEB_QUICK_OPEN = os.path.expanduser(
     "~/.scripts/bin/firefox-quick-keywords"
 )
+EMOJI_LAUNCHER = os.path.expanduser(
+    "~/.scripts/bin/clip-moji"
+)
 SHOW_KEYBINDS = "python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
@@ -85,6 +88,7 @@ keys = [
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
     # Clipboard
     Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
+    Key([MOD, "shift"], "e", lazy.spawn(EMOJI_LAUNCHER), desc="Launch emoji launcher"),
     # Media
     Key([], "XF86AudioPlay", lazy.spawn(f"{MEDIA_CONTROL} play"), desc="Media control - play"),
     Key([], "XF86AudioStop", lazy.spawn(f"{MEDIA_CONTROL} stop"), desc="Media control - stop"),
