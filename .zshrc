@@ -57,4 +57,7 @@ nvm() {
   source $HOME/.nvm/nvm.sh; nvm "$@"
 }
 
-colorscript random
+# Check if is integrated terminal emulator
+if [ -z "$INTEG_EMU" ]; then
+  colorscript random;
+fi
