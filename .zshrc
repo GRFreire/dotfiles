@@ -57,5 +57,4 @@ nvm() {
   source $HOME/.nvm/nvm.sh; nvm "$@"
 }
 
-# Run color-scripts https://github.com/GRFreire/shell-color-scripts
 colorscript random

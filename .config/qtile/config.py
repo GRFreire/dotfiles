@@ -26,10 +26,10 @@ SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
-)  # https://github.com/GRFreire/simple-power-menu
+)
 WEB_QUICK_OPEN = os.path.expanduser(
     "~/.scripts/bin/firefox-quick-keywords"
-)  # https://github.com/GRFreire/firefox-quick-keywords
+)
 SHOW_KEYBINDS = "python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
