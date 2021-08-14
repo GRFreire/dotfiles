@@ -6,7 +6,7 @@
 #                                         
 
 import:
-  - /home/grfreire/.alacritty/themes/dracula/dracula.yml
+  - ~/.alacritty/themes/dracula/dracula.yml
 
 
 window:
