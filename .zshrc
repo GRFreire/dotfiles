@@ -40,7 +40,7 @@ alias pip="pip3"
 alias cat="bat --paging=never --style=header,grid"
 
 # Alias to exa instead of ls
-alias ls="exa --color=always --group-directories-first"
+alias ls="exa --color=always --icons --group-directories-first"
 
 # Alias to nvim instead of vim
 alias vim="nvim"
