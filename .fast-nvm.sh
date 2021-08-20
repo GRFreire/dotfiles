@@ -1,5 +1,3 @@
-#!/bin/sh
-
 locate_nvmrc() {
     locate -w .nvmrc | xargs -I'{}' realpath --relative-to=. '{}' | awk '/^(\.\.\/)*\.nvmrc$/ {print $0}' | sort | xargs -I'{}' realpath '{}'
 }
