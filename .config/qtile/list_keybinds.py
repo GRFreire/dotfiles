@@ -12,10 +12,10 @@ def columnate(matrix):
 
     return "\n".join(_columnate(matrix))
 
-matrix = []
+matrix = [["Key", "Command"]]
 for key in c.keys:
     keys = ' + '.join((key.modifiers + [key.key]))
     desc = key.desc
     matrix.append([keys, desc])
 
-os.system(f"echo \"{columnate(matrix)}\" | yad --text-info --geometry=1200x700")
+os.system(f"echo \"{columnate(matrix)}\" | col -bx | less")

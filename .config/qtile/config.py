@@ -33,7 +33,7 @@ WEB_QUICK_OPEN = os.path.expanduser(
 EMOJI_LAUNCHER = os.path.expanduser(
     "~/.scripts/bin/clip-moji"
 )
-SHOW_KEYBINDS = "python3 /home/grfreire/.config/qtile/list_keybinds.py"
+SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
 keys = [
@@ -366,6 +366,7 @@ floating_layout = layout.Floating(
         Match(wm_class="pavucontrol"),  # Audio mixer
         Match(wm_class="gnome-calendar"),  # Calendar
         Match(wm_class="yad"),  # Yad
+        Match(title="Keybinds"),  # Keybinds window
     ]
 )
 
