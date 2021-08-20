@@ -60,10 +60,7 @@ alias zathura="devour zathura"
 alias ranger="source ranger"
 
 # This loads nvm
-export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
-nvm() {
-  source $HOME/.nvm/nvm.sh; nvm "$@"
-}
+source $HOME/.fast-nvm.sh
 
 # Check if is integrated terminal emulator
 if [ -z "$INTEG_EMU" ]; then
