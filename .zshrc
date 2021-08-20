@@ -44,6 +44,9 @@ alias cat="bat --paging=never --style=header,grid"
 # Alias to exa instead of ls
 alias ls="exa --color=always --icons --group-directories-first"
 
+# Alias to exa instead of less
+alias less="bat -p"
+
 # Alias to nvim instead of vim
 alias vim="nvim"
 
