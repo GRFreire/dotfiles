@@ -50,6 +50,9 @@ alias less="bat -p"
 # Alias to nvim instead of vim
 alias vim="nvim"
 
+# Alias to plocate instead of locate
+alias locate="plocate"
+
 # Fix zathura window swallowing
 alias zathura="devour zathura"
 
