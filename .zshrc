@@ -31,7 +31,7 @@ zinit light zsh-users/zsh-completions
 alias config="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
 
 # Config/scripts Edit
-  alias ce="echo \"\$(/bin/ls \$HOME/.scripts/bin | sed 's|^|.scripts/bin/|')\n\$(config ls-tree -r master --name-only \$HOME)\" | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}' | xargs -r \$EDITOR"
+alias ce="echo \"\$(/bin/ls \$HOME/.scripts/bin | sed \"s|^|\$(realpath \$HOME/.scripts/bin/ --relative-to=.)/|\")\n\$(config ls-tree -r master --name-only \$HOME)\" | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}' | xargs -r \$EDITOR"
 bindkey -s '^e' 'ce\n'
 
 # Alias for python3
