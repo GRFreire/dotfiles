@@ -11,9 +11,12 @@
 
 ### Default programs ###
 export EDITOR="nvim"
+export READER="zathura"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
+export VIDEO="mpv"
+export IMAGE="sxiv"
 
 ### PATH exports ###
 # $1 = path to export
