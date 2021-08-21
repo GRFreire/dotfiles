@@ -58,6 +58,7 @@ alias zathura="devour zathura"
 
 # Allow zsh to "folow" ranger
 alias ranger="source ranger"
+bindkey -s '^[^f' 'ranger\n'
 
 # This loads nvm
 source $HOME/.fast-nvm.sh
