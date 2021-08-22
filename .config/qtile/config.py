@@ -395,6 +395,10 @@ def autostart():
     autostart_script = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.call([autostart_script])
 
+@hook.subscribe.restart
+def restart_hook():
+    os.system(os.path.expanduser("~/.config/qtile/on_restart.sh"))
+
 
 @hook.subscribe.client_new
 def try_swallow(window):

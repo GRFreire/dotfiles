@@ -7,7 +7,7 @@
 /usr/bin/numlockx
 
 # Start compositor
-picom --experimental-backends &
+(sleep 1 && picom --experimental-backends) &
 
 # Start notification server
 dunst &
