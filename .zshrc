@@ -34,6 +34,10 @@ source /usr/share/fzf/key-bindings.zsh
 # Alias config to manage dotfiles with git
 alias config="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
 
+# Pacman Search
+alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias apacs="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
+
 # Config/scripts Edit
 alias ce="echo \"\$(/bin/ls \$HOME/.scripts/bin | sed \"s|^|\$(realpath \$HOME/.scripts/bin/ --relative-to=.)/|\")\n\$((cd \$HOME && config ls-tree -r master --name-only \$HOME) | sed \"s|^|\$(realpath \$HOME --relative-to=.)/|\" | sed 's|^\./||')\" | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}' | xargs -r \$EDITOR"
 bindkey -s '^e' 'ce\n'
