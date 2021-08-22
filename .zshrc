@@ -27,6 +27,10 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 ### zinit plugins - end
 
+# Fzf keybinds
+# <CTRL+R> search history of shell commands
+source /usr/share/fzf/key-bindings.zsh
+
 # Alias config to manage dotfiles with git
 alias config="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
 
