@@ -53,9 +53,6 @@ alias vim="nvim"
 # Alias to plocate instead of locate
 alias locate="plocate"
 
-# Fix zathura window swallowing
-alias zathura="devour zathura"
-
 # Allow zsh to "folow" ranger
 alias ranger="source ranger"
 bindkey -s '^[^f' 'ranger\n'
