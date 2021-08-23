@@ -1,5 +1,12 @@
-locate_nvmrc() {
-    locate -w .nvmrc | xargs -I'{}' realpath --relative-to=. '{}' | awk '/^(\.\.\/)*\.nvmrc$/ {print $0}' | sort | xargs -I'{}' realpath '{}'
+list_nvmrc_recursive() {
+    DIR="$(realpath "$1")"
+    /bin/ls "$DIR/.nvmrc" 2>/dev/null
+    PARENT_DIR="/$(realpath "$DIR/.." --relative-to=/)"
+    if [ "$DIR" != "/" ]; then list_nvmrc_recursive "$PARENT_DIR"; fi;
+}
+
+list_nvmrc() {
+    list_nvmrc_recursive . | sort
 }
 
 export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
@@ -7,10 +14,10 @@ nvm() {
     . $HOME/.nvm/nvm.sh; nvm "$@"
 }
 
-DEFAULT=$(locate_nvmrc)
+DEFAULT=$(list_nvmrc)
 cd() {
     if builtin cd "$@" 2>/dev/null; then
-        FOUND="$(locate_nvmrc)"
+        FOUND="$(list_nvmrc)"
         if [ "$FOUND" != "" ] && [ "$DEFAULT" != "$FOUND" ]; then
             DEFAULT=$FOUND
             nvm use
