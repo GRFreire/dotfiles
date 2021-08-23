@@ -67,6 +67,7 @@ bindkey -s '^[^f' 'ranger\n'
 
 # This loads nvm
 source $HOME/.fast-nvm.sh
+source $HOME/.nvm/bash_completion
 
 # Check if is integrated terminal emulator
 if [ -z "$INTEG_EMU" ]; then
