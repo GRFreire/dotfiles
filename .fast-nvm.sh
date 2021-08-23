@@ -11,7 +11,7 @@ DEFAULT=$(locate_nvmrc)
 cd() {
     if builtin cd "$@" 2>/dev/null; then
         FOUND="$(locate_nvmrc)"
-        if [ "$DEFAULT" != "$FOUND" ]; then
+        if [ "$FOUND" != "" ] && [ "$DEFAULT" != "$FOUND" ]; then
             DEFAULT=$FOUND
             nvm use
         fi
