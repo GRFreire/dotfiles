@@ -33,6 +33,9 @@ WEB_QUICK_OPEN = os.path.expanduser(
 EMOJI_LAUNCHER = os.path.expanduser(
     "~/.scripts/bin/clip-moji"
 )
+BITWARDEN_LAUNCHER = os.path.expanduser(
+    "~/.scripts/bin/bwmenu"
+)
 SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
@@ -42,6 +45,7 @@ keys = [
     Key([MOD], "r", lazy.spawn(LAUNCHER), desc="Open application launcher"),
     Key([MOD], "w", lazy.spawn(WEB), desc="Open web browser"),
     Key([MOD], "p", lazy.spawn(WEB_QUICK_OPEN), desc="Open web browser quick launcher"),
+    Key([MOD], "b", lazy.spawn(BITWARDEN_LAUNCHER), desc="Open bitwarden launcher"),
     Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
