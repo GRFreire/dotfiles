@@ -5,19 +5,15 @@ list_nvmrc_recursive() {
     if [ "$DIR" != "/" ]; then list_nvmrc_recursive "$PARENT_DIR"; fi;
 }
 
-list_nvmrc() {
-    list_nvmrc_recursive . | sort
-}
-
 export PATH="$HOME/.nvm/versions/node/$(/bin/cat $HOME/.nvm/alias/default)/bin:$PATH"
 nvm() {
     . $HOME/.nvm/nvm.sh; nvm "$@"
 }
 
-DEFAULT=$(list_nvmrc)
+DEFAULT=$(list_nvmrc_recursive .)
 cd() {
     if builtin cd "$@" 2>/dev/null; then
-        FOUND="$(list_nvmrc)"
+        FOUND="$(list_nvmrc_recursive .)"
         if [ "$FOUND" != "" ] && [ "$DEFAULT" != "$FOUND" ]; then
             DEFAULT=$FOUND
             nvm use
