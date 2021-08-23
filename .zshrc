@@ -61,6 +61,9 @@ alias vim="nvim"
 # Alias to plocate instead of locate
 alias locate="plocate"
 
+# Make sxiv play gifs by default
+alias sxiv="sxiv -a"
+
 # Allow zsh to "folow" ranger
 alias ranger="source ranger"
 bindkey -s '^[^f' 'ranger\n'
