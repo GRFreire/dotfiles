@@ -30,6 +30,9 @@ POWER_MENU = os.path.expanduser(
 WEB_QUICK_OPEN = os.path.expanduser(
     "~/.scripts/bin/firefox-quick-keywords"
 )
+COLOR_PICKER = os.path.expanduser(
+    "~/.scripts/bin/clip-color"
+)
 EMOJI_LAUNCHER = os.path.expanduser(
     "~/.scripts/bin/clip-moji"
 )
@@ -92,6 +95,7 @@ keys = [
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
     # Clipboard
     Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
+    Key([MOD, ALT], "c", lazy.spawn(COLOR_PICKER), desc="Launch colorpicker"),
     Key([MOD, "shift"], "e", lazy.spawn(EMOJI_LAUNCHER), desc="Launch emoji launcher"),
     # Media
     Key([], "XF86AudioPlay", lazy.spawn(f"{MEDIA_CONTROL} play"), desc="Media control - play"),
