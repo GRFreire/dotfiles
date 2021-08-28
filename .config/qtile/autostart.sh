@@ -16,7 +16,7 @@ dunst &
 greenclip daemon &
 
 # Display background image
-nitrogen --restore
+feh --bg-scale ~/.config/wall.png
 
 # Start network manager applet (systray)
 nm-applet &
