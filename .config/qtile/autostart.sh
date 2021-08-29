@@ -18,6 +18,9 @@ greenclip daemon &
 # Display background image
 feh --bg-scale ~/.config/wall.png
 
+# Start conky
+conky &
+
 # Start network manager applet (systray)
 nm-applet &
 
