@@ -90,7 +90,8 @@ element active, element selected active {
 }
 
 message {
-  padding: 5px;
+  padding: 10px 5px 5px;
+  margin: 0 0 10px 0;
   border-radius: 3px;
   background-color: @emphasis;
   border: 1px;
