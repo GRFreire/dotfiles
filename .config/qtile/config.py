@@ -24,6 +24,7 @@ FILE_MANAGER = "nautilus -w"
 CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
 SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
+CALCULATOR= "rofi -show calc -modi calc -no-show-match -no-sort"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
@@ -50,6 +51,7 @@ keys = [
     Key([MOD], "p", lazy.spawn(WEB_QUICK_OPEN), desc="Open web browser quick launcher"),
     Key([MOD], "b", lazy.spawn(BITWARDEN_LAUNCHER), desc="Open bitwarden launcher"),
     Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
+    Key([MOD], "c", lazy.spawn(CALCULATOR), desc="Open calculator"),
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
     # Switch between windows
