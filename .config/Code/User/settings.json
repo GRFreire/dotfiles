@@ -2,6 +2,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Omni",
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Droid Sans Fallback', monospace",
+  "workbench.editor.enablePreview": false,
   "editor.fontLigatures": true,
   "editor.lineHeight": 24,
   "explorer.compactFolders": false,
