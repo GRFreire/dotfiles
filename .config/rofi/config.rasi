@@ -15,91 +15,138 @@
  * Author: Benjamin Stauss
  * User: me-benni
  *
+ * Co-Author: Guilherme Freire
+ * User: GRFreire
+ * 
  */
 
+configuration {
+    modi: "window,run,drun";
+    show-icons: false;
+}
 
 * {
-  black:      #000000;
-  red:        #eb6e67;
-  green:      #95ee8f;
-  yellow:     #f8c456;
-  blue:       #6eaafb;
-  mangenta:   #d886f3;
-  cyan:       #6cdcf7;
-  emphasis:   #50536b;
-  text:       #dfdfdf;
-  text-alt:   #b2b2b2;
-  fg:         #abb2bf;
-  bg:         #282c34;
+    black:      #000000;
+    red:        #eb6e67;
+    green:      #95ee8f;
+    yellow:     #f8c456;
+    blue:       #6eaafb;
+    mangenta:   #d886f3;
+    cyan:       #6cdcf7;
+    emphasis:   #50536b;
+    text:       #dfdfdf;
+    text-alt:   #b2b2b2;
+    fg:         #abb2bf;
+    bg:         #282c34;
 
-  spacing: 0;
-  background-color: transparent;
+    spacing: 0;
+    background-color: transparent;
 
-  font: "Knack Nerd Font 14";
-  text-color: @text;
-}
-
-mainbox {
-  background-color: #282c34ee;
-  padding: 14px; 
-}
-
-inputbar {
-  margin: 0px 0px 20px 0px;
-  children: [prompt, textbox-prompt-colon, entry, case-indicator];
-}
-
-prompt {
-  text-color: @blue;
-}
-
-textbox-prompt-colon {
-  expand: false;
-  str: ":";
-  text-color: @text-alt;
-}
-
-entry {
-  margin: 0px 10px;
-}
-
-listview {
-  spacing: 5px;
-  dynamic: true;
-  scrollbar: false;
+    font: "Knack Nerd Font 14";
+    text-color: @text;
 }
 
 element {
-  padding: 10px 5px 5px;
-  text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
-  border-radius: 3px;
+    cursor: pointer;
+    padding: 7px 5px 5px;
+    text-color: @text-alt;
+    highlight: bold #95ee8f;
+    border: 0;
+    border-radius: 3px;
+    text-color: @text;
 }
 
-element selected {
-  background-color: @emphasis;
-  text-color: @text;
+element-icon {
+    background-color: transparent;
+    margin: 0 10px 0 0;
 }
 
-element urgent, element selected urgent {
-  text-color: @red;
+element-icon {
+    background-color: transparent;
+    margin: 0 10px 0 0;
 }
 
-element active, element selected active {
-  text-color: @purple;
+element-text {
+    padding: 3px 0 0;
+}
+
+element.selected.normal {
+    background-color: @emphasis;
+}
+
+element normal.normal, element alternate.normal {
+    background-color: transparent;
+    text-color: @text;
+}
+
+element normal.urgent, element alternate.urgent  {
+    background-color: transparent;
+    text-color: @red;
+}
+
+element normal.active, element alternate.active  {
+    background-color: transparent;
+    text-color: @mangenta;
+}
+
+window {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+}
+
+mainbox {
+    border: 0;
+    background-color: #282c34dd;
+    padding: 14px;
 }
 
 message {
-  padding: 10px 5px 5px;
-  margin: 0 0 10px 0;
-  border-radius: 3px;
-  background-color: @emphasis;
-  border: 1px;
-  border-color: @cyan;
+    padding: 10px 5px 5px;
+    margin: 0 0 10px 0;
+    border-radius: 3px;
+    background-color: @emphasis;
+    border: 2px;
+    border-color: @blue;
+}
+
+textbox {
+    text-color: @text;
+}
+
+listview {
+    border: 0;
+    dynamic: true;
+    scrollbar: false;
 }
 
 button selected {
-  padding: 5px;
-  border-radius: 3px;
-  background-color: @emphasis;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: @emphasis;
+}
+
+inputbar {
+    margin: 0px 0px 20px 0px;
+    children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+entry {
+    cursor: text;
+    placeholder-color: @text-alt;
+    placeholder: "";
+    text-color: @text;
+    margin: 0px 10px;
+}
+
+prompt {
+    text-color: @blue;
+}
+
+textbox-prompt-colon {
+    text-color: inherit;
+    expand: false;
+    str: ":";
+    text-color: @text-alt;
 }

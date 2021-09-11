@@ -18,7 +18,7 @@ from libqtile.lazy import lazy
 MOD = "mod4"
 ALT = "mod1"
 TERMINAL = "alacritty"
-LAUNCHER = "rofi -show drun"
+LAUNCHER = "rofi -icon-theme 'Paper' -show-icons -show drun"
 WEB = "firefox"
 FILE_MANAGER = "nautilus -w"
 CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
