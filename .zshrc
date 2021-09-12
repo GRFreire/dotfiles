@@ -68,6 +68,9 @@ alias sxiv="sxiv -ad"
 alias ranger="source ranger"
 bindkey -s '^[^f' 'ranger\n'
 
+# Alias btw to neofetch
+alias btw="neofetch"
+
 # This loads nvm
 source $HOME/.fast-nvm.sh
 source $HOME/.nvm/bash_completion
