@@ -5,7 +5,7 @@
 "    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 "                                         
 
-set guifont=Fira\ Code\ Regular\ 11
+set guifont=Cascadia\ Code\ 11
 
 :set number
 :set relativenumber

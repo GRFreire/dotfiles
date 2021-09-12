@@ -1,7 +1,8 @@
 {
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Tokyo Night",
-  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'Droid Sans Fallback', monospace",
+  "editor.fontFamily": "'Cascadia Code', 'Fira Code', 'Droid Sans Mono', 'Droid Sans Fallback', monospace",
+  "editor.fontSize": 14,
   "workbench.editor.enablePreview": false,
   "editor.fontLigatures": true,
   "editor.lineHeight": 24,

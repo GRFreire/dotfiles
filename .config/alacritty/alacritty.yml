@@ -19,6 +19,6 @@ scrolling:
 
 font:
   normal:
-    family: 'Fira Code'
+    family: 'Cascadia Code'
 
 background_opacity: 0.8
