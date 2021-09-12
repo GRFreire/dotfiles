@@ -40,6 +40,9 @@ EMOJI_LAUNCHER = os.path.expanduser(
 BITWARDEN_LAUNCHER = os.path.expanduser(
     "~/.scripts/bin/bwmenu"
 )
+BLUETOOTH_MANAGER = os.path.expanduser(
+    "~/.scripts/bin/rofi-bluetooth"
+)
 SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
@@ -95,6 +98,7 @@ keys = [
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
+    Key([MOD, "control"], "c", lazy.spawn(BLUETOOTH_MANAGER), desc="Open bluetooth manager"),
     # Clipboard
     Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
     Key([MOD, ALT], "c", lazy.spawn(COLOR_PICKER), desc="Launch colorpicker"),
