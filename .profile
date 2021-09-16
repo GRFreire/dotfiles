@@ -40,7 +40,7 @@ try_export_path $HOME/.cargo/bin
 export FZF_DEFAULT_OPTS="--reverse --cycle --margin 0,1"
 
 # Android Studio
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/default
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
