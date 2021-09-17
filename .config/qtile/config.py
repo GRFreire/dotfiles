@@ -98,7 +98,7 @@ keys = [
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
-    Key([MOD, "control"], "c", lazy.spawn(BLUETOOTH_MANAGER), desc="Open bluetooth manager"),
+    Key([MOD, "control"], "b", lazy.spawn(BLUETOOTH_MANAGER), desc="Open bluetooth manager"),
     # Clipboard
     Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
     Key([MOD, ALT], "c", lazy.spawn(COLOR_PICKER), desc="Launch colorpicker"),
