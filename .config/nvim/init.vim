@@ -20,7 +20,7 @@ set guifont=Cascadia\ Code\ 11
 
 call plug#begin()
 
-Plug 'romgrk/doom-one.vim'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -34,9 +34,15 @@ set encoding=UTF-8
 call plug#end()
 
 set background=dark
-:colorscheme doom-one
+set termguicolors
 
-let g:airline_theme='deus'
+let g:tokyonight_style = 'night'
+let g:tokyonight_transparent_background = 1
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
+
+
+let g:airline_theme='tokyonight'
 let g:airline_symbols_ascii = 1
 
 autocmd BufEnter * lcd %:p:h
