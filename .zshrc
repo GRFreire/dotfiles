@@ -25,6 +25,7 @@ source $HOME/.zinit/bin/zinit.zsh
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit light djui/alias-tips
 ### zinit plugins - end
 
 # Fzf keybinds
