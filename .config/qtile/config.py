@@ -136,14 +136,14 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 
 
 colors = {
-    "background": "#272A34",
-    "background_highlight": "#363D54",
-    "text": "#EAEDF6",
-    "accent_color_dark": "#1C325E",
-    "accent_color_light": "#49659C",
-    "accent_highlight": "#214897",
-    "active": "#9EBEFF",
-    "inactive": "#B4C5E4",
+    "background": "#1A1B26",
+    "background_highlight": "#24283B",
+    "text": "#D4D8EA",
+    "accent_color_dark": "#1B294B",
+    "accent_color_light": "#495C88",
+    "accent_highlight": "#203769",
+    "active": "#7AA2F7",
+    "inactive": "#565f89",
 }
 
 layout_theme = {
