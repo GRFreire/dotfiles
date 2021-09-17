@@ -1,3 +1,0 @@
-[submodule ".alacritty/themes/dracula"]
-	path = .alacritty/themes/dracula
-	url = git@github.com:dracula/alacritty.git
