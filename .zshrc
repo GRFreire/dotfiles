@@ -28,6 +28,8 @@ zinit light zsh-users/zsh-completions
 zinit light djui/alias-tips
 ### zinit plugins - end
 
+export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_"
+
 # Fzf keybinds
 # <CTRL+R> search history of shell commands
 source /usr/share/fzf/key-bindings.zsh
