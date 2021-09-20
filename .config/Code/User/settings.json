@@ -12,6 +12,7 @@
   "workbench.editor.labelFormat": "short",
   "workbench.startupEditor": "none",
   "files.defaultLanguage": " ${activeEditorLanguage}",
+  "editor.bracketPairColorization.enabled": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "material-icon-theme.folders.associations": {
