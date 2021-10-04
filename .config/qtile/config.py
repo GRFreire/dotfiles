@@ -472,6 +472,8 @@ def try_regroup_window(client):
         "Navigator": "WWW",
         "code": "DEV",
         "Steam": "GMG",
+        "heroic": "GMG",
+        "lutris": "GMG",
         "nitrogen": "SYS",
         "VirtualBox Manager": "SYS",
         "virt-manager": "SYS",
