@@ -62,6 +62,6 @@
     "editor.wordBasedSuggestions": false,
   },
   "terminal.integrated.env.linux": {
-    "INTEG_EMU": "vscode"
+    "EMULATOR": "code"
   }
 }

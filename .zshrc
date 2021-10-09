@@ -42,7 +42,7 @@ alias pacs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sud
 alias apacs="paru -Slq | fzf --multi --preview 'paru -Si {1}' | xargs -ro paru -S"
 
 # Config/scripts Edit
-alias ce="echo \"\$(/bin/ls \$HOME/.scripts/bin | sed \"s|^|\$(realpath \$HOME/.scripts/bin/ --relative-to=.)/|\")\n\$((cd \$HOME && config ls-tree -r master --name-only \$HOME) | sed \"s|^|\$(realpath \$HOME --relative-to=.)/|\" | sed 's|^\./||')\" | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}' | xargs -r \$EDITOR"
+alias ce="echo \"\$(/bin/ls \$HOME/.scripts/bin | sed \"s|^|\$(realpath \$HOME/.scripts/bin/ --relative-to=.)/|\")\n\$((cd \$HOME && config ls-tree -r master --name-only \$HOME) | sed \"s|^|\$(realpath \$HOME --relative-to=.)/|\" | sed 's|^\./||')\" | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}' | xargs -r \$(echo \$EDITOR)"
 bindkey -s '^[^E' 'ce\n'
 
 # Alias for python3
@@ -79,6 +79,8 @@ source $HOME/.fast-nvm.sh
 source $HOME/.nvm/bash_completion
 
 # Check if is integrated terminal emulator
-if [ -z "$INTEG_EMU" ]; then
-  colorscript random;
+if [ "$EMULATOR" = "code" ]; then
+  export EDITOR="code --wait"
+else
+  colorscript random
 fi
