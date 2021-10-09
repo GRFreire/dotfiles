@@ -8,6 +8,7 @@
   "editor.fontLigatures": true,
   "editor.lineHeight": 24,
   "explorer.compactFolders": false,
+  "workbench.sideBar.location": "right",
   "editor.renderLineHighlight": "gutter",
   "workbench.editor.labelFormat": "short",
   "workbench.startupEditor": "none",
