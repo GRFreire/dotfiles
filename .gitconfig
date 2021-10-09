@@ -15,14 +15,14 @@
 
 [alias]
   st = status -sb
-  lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
+  lg = log --pretty=format:'%C(red)%h %C(green)<%an> %Creset%s %C(white)- %ar%Creset' --max-count=30
   fa = !(git diff --name-only | fzf -m --preview='git diff {} | delta' | xargs -I'{}' git add {} && git st)
   unstage = reset HEAD --
   undo = reset --soft HEAD~1
   discard = checkout --
   changes = !(commit=$(git log --pretty=format:'%h %cr <%an> %s' | fzf | cut -d' ' -f1) && git diff "$commit~1" "$commit")
-  incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
-  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
+  incoming = !(git fetch --quiet && git log --pretty=format:'%C(red)%h %C(green)<%an> %C(cyan)%d %Creset%s %C(white)- %ar%Creset' ..@{u})
+  outgoing = !(git fetch --quiet && git log --pretty=format:'%C(red)%h %C(green)<%an> %C(cyan)%d %Creset%s %C(white)- %ar%Creset' @{u}..)
 
 [commit]
   gpgsign = true
