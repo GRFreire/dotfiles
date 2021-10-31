@@ -296,7 +296,7 @@ def main_bar():
             ],
             [
                 widget.TextBox(
-                    text="Vol:",
+                    text="Volume:",
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
                             "amixer -q -D pulse sset Master toggle"
