@@ -64,8 +64,8 @@ alias vim="nvim"
 # Alias to plocate instead of locate
 alias locate="plocate"
 
-# Alias to sxiv with some flags
-alias sxiv="sxiv -ad"
+# Alias to nsxiv with some flags
+alias nsxiv="nsxiv -a"
 
 # Allow zsh to "folow" ranger
 alias ranger="source ranger"
