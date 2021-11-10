@@ -335,6 +335,7 @@ def aux_bar():
             ),
             widget.WindowName(),
             widget.Memory(format='Memory {MemPercent}%'),
+            widget.ThermalSensor(fmt='Temp: {}'),
             widget.CPU(format='CPU {load_percent}%'),
         ]
     )
