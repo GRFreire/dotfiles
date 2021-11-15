@@ -56,7 +56,7 @@ alias cat="bat --paging=never --style=header,grid"
 alias ls="exa --color=always --icons --group-directories-first"
 
 # Alias to bat instead of less
-alias less="bat -p"
+alias less="bat -p --paging=always"
 
 # Alias to nvim instead of vim
 alias vim="nvim"
