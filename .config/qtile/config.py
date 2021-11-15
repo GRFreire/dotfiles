@@ -487,6 +487,7 @@ def try_regroup_window(client):
         "spotify": "MUS",
         "obs": "VID",
         "ghb": "VID",
+        "resolve": "EDT",
         "audacity": "EDT",
         "krita": "EDT",
     }
