@@ -7,8 +7,6 @@
 #    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 #                                         
 
-. "$HOME/.id.profile"
-
 ### Default programs ###
 export EDITOR="nvim"
 export READER="zathura"
