@@ -10,7 +10,7 @@
 ### Default programs ###
 export EDITOR="nvim"
 export READER="zathura"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man --paging always -p'"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export VIDEO="mpv"
