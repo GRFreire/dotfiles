@@ -12,7 +12,7 @@ import psutil
 from typing import List  # noqa: F401
 
 from libqtile import bar, layout, widget, qtile, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, ScratchPad, DropDown, Key, Match, Screen
 from libqtile.lazy import lazy
 
 MOD = "mod4"
@@ -24,7 +24,7 @@ FILE_MANAGER = "pcmanfm --no-desktop"
 CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
 SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
-CALCULATOR= "rofi -show calc -modi calc -no-show-match -no-sort"
+CALCULATOR= "gnome-calculator"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
@@ -54,7 +54,6 @@ keys = [
     Key([MOD], "p", lazy.spawn(WEB_QUICK_OPEN), desc="Open web browser quick launcher"),
     Key([MOD], "b", lazy.spawn(BITWARDEN_LAUNCHER), desc="Open bitwarden launcher"),
     Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
-    Key([MOD], "c", lazy.spawn(CALCULATOR), desc="Open calculator"),
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
     # Switch between windows
@@ -125,6 +124,17 @@ group_names = [
     ("EDT", {"layout": "max"}),
 ]
 
+scratch_pads = [
+    [
+        DropDown("calculator", CALCULATOR, x=0.75, y=0.45, width=0.2, height=0.4, opacity=0.9),
+        [[MOD], "c"]
+    ],
+    [
+        DropDown("filemanager", FILE_MANAGER, x=0.65, y=0.1, width=0.35, height=0.8, opacity=0.9, on_focus_lost_hide=False),
+        [[MOD, "control"], "f"]
+    ]
+]
+
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
 for i, (name, kwargs) in enumerate(group_names, 1):
@@ -134,6 +144,17 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     # Send current window to another group
     keys.append(Key([MOD, "shift"], str(i), lazy.window.togroup(name), desc=f"Send current window to group {name}"))
 
+sp_groups = []
+sp_keys = []
+for sp in scratch_pads:
+    sp_groups.append(sp[0])
+    sp_keys.append(sp[1])
+
+groups.append(ScratchPad("scratchpad", sp_groups))
+
+for i, (mod, k) in enumerate(sp_keys, 0):
+    name = sp_groups[i].name
+    keys.append(Key(mod, *k, lazy.group['scratchpad'].dropdown_toggle(name), desc=f"Open {name} scratchpad"))
 
 colors = {
     "background": "#1A1B26",
