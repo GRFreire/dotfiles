@@ -67,6 +67,9 @@ alias locate="plocate"
 # Alias to nsxiv with some flags
 alias nsxiv="nsxiv -a"
 
+# Alias to ip with some flags
+alias ip="ip --color=always"
+
 # Allow zsh to "folow" ranger
 alias ranger="source ranger"
 bindkey -s '^[^f' 'ranger\n'
