@@ -22,7 +22,7 @@ export HISTORY_IGNORE="ce"
 ### zinit plugins - start
 source $HOME/.zinit/bin/zinit.zsh
 
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light djui/alias-tips
