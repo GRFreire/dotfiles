@@ -1,0 +1,4 @@
+min_scale = 0.8
+scroll_speed = 2.0 
+drag_friction = 6.0
+scale_friction = 4.0

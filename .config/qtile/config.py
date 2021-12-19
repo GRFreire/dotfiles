@@ -24,6 +24,7 @@ FILE_MANAGER = "pcmanfm --no-desktop"
 CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
 SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
+ZOOM_UTILITY = "boomer"
 CALCULATOR= "gnome-calculator"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
@@ -97,6 +98,7 @@ keys = [
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
+    Key([MOD], "equal", lazy.spawn(ZOOM_UTILITY), desc="Open zoom utility"),
     Key([MOD, "control"], "b", lazy.spawn(BLUETOOTH_MANAGER), desc="Open bluetooth manager"),
     # Clipboard
     Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
