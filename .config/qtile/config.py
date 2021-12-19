@@ -514,6 +514,7 @@ def try_regroup_window(client):
         "resolve": "EDT",
         "audacity": "EDT",
         "krita": "EDT",
+        "mypaint": "EDT",
     }
 
     # Notion for class is notion-nativefier-xxxx for example
