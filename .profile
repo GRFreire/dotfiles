@@ -7,6 +7,9 @@
 #    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
 #                                         
 
+# Start ssh-agent
+eval `ssh-agent -s` > /dev/null
+
 ### Default programs ###
 export EDITOR="nvim"
 export READER="zathura"
