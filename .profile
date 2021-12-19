@@ -1,12 +1,5 @@
 #!/bin/sh
 
-#     ____ ____  _____         _          
-#    / ___|  _ \|  ___| __ ___(_)_ __ ___ 
-#   | |  _| |_) | |_ | '__/ _ \ | '__/ _ \     Guilherme Rugai Freire
-#   | |_| |  _ <|  _|| | |  __/ | | |  __/     https://grfreire.com
-#    \____|_| \_\_|  |_|  \___|_|_|  \___|     https://github.com/GRFreire
-#                                         
-
 # Start ssh-agent
 eval `ssh-agent -s` > /dev/null
 
