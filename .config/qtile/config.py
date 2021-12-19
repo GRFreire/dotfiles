@@ -404,6 +404,7 @@ floating_layout = layout.Floating(
         Match(wm_class="pavucontrol"),  # Audio mixer
         Match(wm_class="gnome-calendar"),  # Calendar
         Match(wm_class="yad"),  # Yad
+        Match(title="Krita - Edit Text — Krita"),  # Keybinds window
         Match(title="Keybinds"),  # Keybinds window
     ]
 )
