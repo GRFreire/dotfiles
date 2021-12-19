@@ -23,6 +23,10 @@
 configuration {
     modi: "window,run,drun";
     show-icons: false;
+
+    drun {
+        display-name: "Launch";
+    }
 }
 
 * {
