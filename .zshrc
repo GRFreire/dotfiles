@@ -60,6 +60,8 @@ alias locate="plocate"
 # Alias to nsxiv with some flags
 alias nsxiv="nsxiv -a"
 
+alias ssh="TERM=xterm-256color ssh"
+
 # Alias to ip with some flags
 alias ip="ip --color=always"
 
