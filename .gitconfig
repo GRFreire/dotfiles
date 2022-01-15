@@ -1,7 +1,7 @@
 [user]
-  email = 41879254+GRFreire@users.noreply.github.com
+  email = dev@grfreire.com
   name = Guilherme Rugai Freire
-  signingkey = 1D0FA4387C5873294D5863980F9FE41723A8A297
+  signingkey = 62C9BDFEE27E56A52C50D5A0FC05BE5CD322C427
 
 [core]
   editor = $EDITOR
