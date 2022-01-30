@@ -1,4 +1,4 @@
 #!/bin/sh
 
-code --list-extensions > extensions-list.txt
+code --list-extensions > .config/code/extensions-list.txt
 
