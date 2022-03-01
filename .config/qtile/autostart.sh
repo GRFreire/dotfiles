@@ -27,6 +27,9 @@ nm-applet &
 # Start volume bar
 ~/.config/xob/volume.sh &
 
+# Start nextcloud
+nextcloud --background &
+
 # Run xidlehook
 xidlehook \
   `# Don't lock when there's a fullscreen application` \
