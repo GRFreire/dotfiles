@@ -47,6 +47,7 @@ alias cat="bat --paging=never --style=header,grid"
 
 # Alias to exa instead of ls
 alias ls="exa --color=always --icons --group-directories-first"
+alias tree="ls --tree"
 
 # Alias to bat instead of less
 alias less="bat -p --paging=always"
