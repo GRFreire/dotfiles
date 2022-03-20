@@ -30,6 +30,9 @@ nm-applet &
 # Start nextcloud
 nextcloud --background &
 
+# Set up wacom tablet
+autoxsetwacom
+
 # Run xidlehook
 xidlehook \
   `# Don't lock when there's a fullscreen application` \
