@@ -12,9 +12,6 @@
 # Start notification server
 dunst &
 
-# Start clipboard manager
-greenclip daemon &
-
 # Display background image
 feh --bg-scale ~/.config/wall.png
 
@@ -26,9 +23,6 @@ nm-applet &
 
 # Start volume bar
 ~/.config/xob/volume.sh &
-
-# Start nextcloud
-nextcloud --background &
 
 # Set up wacom tablet
 autoxsetwacom
@@ -48,3 +42,6 @@ xidlehook \
     'systemctl suspend' \
     '' &
 
+
+# Run all applications in the autostart folder
+dex ~/.config/autostart/*

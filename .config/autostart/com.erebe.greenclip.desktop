@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Greenclip
+GenericName=Clipboard manager
+Exec="/usr/bin/greenclip" daemon
+Terminal=false
+Categories=Utility
+Type=Application
+StartupNotify=false
