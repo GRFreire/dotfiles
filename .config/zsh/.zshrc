@@ -80,7 +80,7 @@ bindkey -s '^[^f' 'ranger\n'
 alias btw="neofetch"
 
 # This loads nvm
-source $HOME/.fast-nvm.sh
+source $HOME/.config/fast-nvm.sh
 source $NVM_DIR/bash_completion
 
 # Check if is integrated terminal emulator
