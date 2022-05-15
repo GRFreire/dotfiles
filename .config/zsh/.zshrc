@@ -7,8 +7,14 @@ ZSH_THEME="robbyrussell"
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
+# Load cargo env
+. "$CARGO_HOME/env"
+
 # Set cursor to beam shape
 echo -ne '\e[5 q'
+
+# ZSH Specific
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 export HISTORY_IGNORE="ce"
 
@@ -74,8 +80,8 @@ bindkey -s '^[^f' 'ranger\n'
 alias btw="neofetch"
 
 # This loads nvm
-source $HOME/.fast-nvm.sh
-source $HOME/.nvm/bash_completion
+source $HOME/.config/fast-nvm.sh
+source $NVM_DIR/bash_completion
 
 # Check if is integrated terminal emulator
 if [ "$EMULATOR" = "code" ]; then

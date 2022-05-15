@@ -13,7 +13,7 @@
 dunst &
 
 # Display background image
-feh --bg-scale ~/.config/wall.png
+feh --bg-scale --no-fehbg ~/.config/wall.png
 
 # Start conky
 conky &
