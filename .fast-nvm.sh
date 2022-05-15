@@ -5,9 +5,9 @@ list_nvmrc_recursive() {
     if [ "$DIR" != "/" ]; then list_nvmrc_recursive "$PARENT_DIR"; fi;
 }
 
-export PATH="$NVM_DIR/versions/node/$(/bin/cat $NVM_DIR/alias/default)/bin:$PATH"
+export PATH="$NVM_DIR/versions/node/$(/bin/cat "$NVM_DIR/alias/default")/bin:$PATH"
 nvm() {
-    . $NVM_DIR/nvm.sh; nvm "$@"
+    . "$NVM_DIR/nvm.sh"; nvm "$@"
 }
 
 DEFAULT=$(list_nvmrc_recursive .)

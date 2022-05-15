@@ -18,8 +18,8 @@ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export NVM_DIR="$XDG_DATA_HOME"/nvm
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
-export ZDOTDIR=$HOME/.config/zsh
+export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
+export ZDOTDIR="$HOME"/.config/zsh
 
 ### Start ssh-agent ###
 eval `ssh-agent -s` > /dev/null
@@ -41,15 +41,15 @@ try_export_path() {
   fi
 }
 
-try_export_path $HOME/.scripts/bin
+try_export_path "$HOME/.scripts/bin"
 
-try_export_path $HOME/.bin
+try_export_path "$HOME/.bin"
 
-try_export_path $HOME/.local/bin
+try_export_path "$HOME/.local/bin"
 
-try_export_path $HOME/.yarn/bin
+try_export_path "$HOME/.yarn/bin"
 
-try_export_path $HOME/.cargo/bin
+try_export_path "$HOME/.cargo/bin"
 
 # Fzf options
 export FZF_DEFAULT_OPTS="--reverse --cycle --margin 0,1"
@@ -59,13 +59,13 @@ export GOPATH="$GOPATH:$HOME/Projects/thirdparty/go"
 export GOPATH="$GOPATH:$HOME/Projects/go"
 
 # Android Studio
-export JAVA_HOME=/usr/lib/jvm/default
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:~/android-studio/bin
+export JAVA_HOME="/usr/lib/jvm/default"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:~/android-studio/bin"
 
 # SPICETIFY (SPOTIFY)
 export SPICETIFY_INSTALL="$HOME/spicetify-cli"
@@ -75,5 +75,5 @@ export PATH="$SPICETIFY_INSTALL:$PATH"
 export FrameworkPathOverride=/etc/mono/4.5
 
 # Path for cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/cuda/lib64
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/cuda/lib64"
 
