@@ -31,9 +31,6 @@ COLOR_PICKER = os.path.expanduser(
 EMOJI_LAUNCHER = os.path.expanduser(
     "~/.scripts/bin/clip-moji"
 )
-BITWARDEN_LAUNCHER = os.path.expanduser(
-    "~/.scripts/bin/bwmenu"
-)
 BLUETOOTH_MANAGER = os.path.expanduser(
     "~/.scripts/bin/rofi-bluetooth"
 )
@@ -46,7 +43,6 @@ keys = [
     Key([MOD], "r", lazy.spawn(LAUNCHER), desc="Open application launcher"),
     Key([MOD], "w", lazy.spawn(WEB), desc="Open web browser"),
     Key([MOD], "p", lazy.spawn(WEB_QUICK_OPEN), desc="Open web browser quick launcher"),
-    Key([MOD], "b", lazy.spawn(BITWARDEN_LAUNCHER), desc="Open bitwarden launcher"),
     Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -394,6 +390,7 @@ floating_layout = layout.Floating(
         Match(title="branchdialog"),  # gitk
         Match(wm_class="pinentry-gtk-2"),  # GPG key password entry
         Match(wm_class="gnome-calculator"),  # Calculator
+        Match(wm_class="bitwarden"),  # Bitwarden
         Match(wm_class="pavucontrol"),  # Audio mixer
         Match(wm_class="gnome-calendar"),  # Calendar
         Match(wm_class="yad"),  # Yad
@@ -497,7 +494,6 @@ def try_regroup_window(client):
         "virt-manager": "SYS",
         "baobab": "SYS",
         "gnome-disks": "SYS",
-        "bitwarden": "SYS",
         "gedit": "DOC",
         "discord": "CHAT",
         "microsoft teams - preview": "CHAT",
