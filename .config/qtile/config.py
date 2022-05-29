@@ -15,6 +15,7 @@ LAUNCHER = "rofi -icon-theme 'Paper' -show-icons -show drun"
 WEB = "firefox"
 FILE_MANAGER = "pcmanfm --no-desktop -n"
 CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
+PASSWORD_MANAGER = "bitwarden-desktop"
 SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
 ZOOM_UTILITY = "boomer"
@@ -41,6 +42,7 @@ keys = [
     Key([MOD], "w", lazy.spawn(WEB), desc="Open web browser"),
     Key([MOD], "p", lazy.spawn(WEB_QUICK_OPEN), desc="Open web browser quick launcher"),
     Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
+    Key([MOD], "b", lazy.spawn(PASSWORD_MANAGER), desc="Open password manager"),
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
     # Switch between windows
