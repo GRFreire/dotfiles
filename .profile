@@ -49,7 +49,7 @@ try_export_path "$HOME/.local/bin"
 
 try_export_path "$HOME/.yarn/bin"
 
-try_export_path "$HOME/.cargo/bin"
+try_export_path "$CARGO_HOME/bin"
 
 # Fzf options
 export FZF_DEFAULT_OPTS="--reverse --cycle --margin 0,1"
