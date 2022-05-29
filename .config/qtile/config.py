@@ -31,9 +31,6 @@ COLOR_PICKER = os.path.expanduser(
 EMOJI_LAUNCHER = os.path.expanduser(
     "~/.scripts/bin/clip-moji"
 )
-BLUETOOTH_MANAGER = os.path.expanduser(
-    "~/.scripts/bin/rofi-bluetooth"
-)
 SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
@@ -88,7 +85,6 @@ keys = [
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
     Key([MOD], "equal", lazy.spawn(ZOOM_UTILITY), desc="Open zoom utility"),
-    Key([MOD, "control"], "b", lazy.spawn(BLUETOOTH_MANAGER), desc="Open bluetooth manager"),
     # Clipboard
     Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
     Key([MOD, ALT], "c", lazy.spawn(COLOR_PICKER), desc="Launch colorpicker"),
