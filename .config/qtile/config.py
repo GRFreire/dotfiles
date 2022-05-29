@@ -18,7 +18,7 @@ CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -r
 SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
 ZOOM_UTILITY = "boomer"
-CALCULATOR= "gnome-calculator"
+CALCULATOR = "gnome-calculator"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
@@ -121,7 +121,7 @@ group_names = [
 
 scratch_pads = [
     [
-        DropDown("calculator", CALCULATOR, x=0.75, y=0.45, width=0.2, height=0.4, opacity=0.9),
+        DropDown("calculator", CALCULATOR, x=0.75, y=0.45, width=0.2, height=0.4, opacity=0.9, on_focus_lost_hide=False),
         [[MOD], "c"]
     ],
     [
