@@ -27,7 +27,11 @@
     "modules": "components",
     "implementations": "core",
     "dtos": "typescript",
-    "fakes": "mock"
+    "fakes": "mock",
+    "cloud": "public",
+    "media": "video",
+    "recover": "update",
+    "health": "rules"
   },
   "material-icon-theme.files.associations": {
     "ormconfig.json": "database",
