@@ -20,6 +20,7 @@ SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
 ZOOM_UTILITY = "boomer"
 CALCULATOR = "gnome-calculator"
+CALENDAR = "gsimplecal"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
@@ -318,7 +319,7 @@ def main_bar():
             [
                 widget.Clock(
                     format="%d / %m / %y",
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("gsimplecal")},
+                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(CALENDAR)},
                 ),
                 widget.Clock(format="%I:%M %p", font=FONT + " Bold"),
             ],
