@@ -348,6 +348,16 @@ def aux_bar():
             widget.Memory(format='Memory {MemPercent}%'),
             widget.ThermalSensor(fmt='Temp: {}'),
             widget.CPU(format='CPU {load_percent}%'),
+            widget.Sep(
+                linewidth=8,
+                background=colors["background"],
+                foreground=colors["background"],
+            ),
+            widget.Clock(
+                format="%d / %m / %y",
+                mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(CALENDAR)},
+            ),
+            widget.Clock(format="%I:%M %p", font=FONT + " Bold"),
         ]
     )
 
