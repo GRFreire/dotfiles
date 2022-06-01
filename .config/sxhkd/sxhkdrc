@@ -1,0 +1,32 @@
+# sxhkd config
+
+super + Return
+    $TERMINAL
+
+super + w
+    $BROWSER
+
+super + f
+    pcmanfm --no-desktop -n
+
+super + b
+    bitwarden-desktop
+
+super + equal
+    boomer
+
+super + r
+    rofi -icon-theme 'Paper' -show-icons -show drun
+
+super + p
+    ~/.scripts/bin/firefox-quick-keywords
+
+super + shift + c
+    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+super + alt + c
+    ~/.scripts/bin/clip-color
+
+super + shift + e
+    ~/.scripts/bin/clip-moji
+

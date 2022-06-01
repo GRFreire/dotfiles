@@ -11,39 +11,18 @@ from libqtile.lazy import lazy
 MOD = "mod4"
 ALT = "mod1"
 TERMINAL = "alacritty"
-LAUNCHER = "rofi -icon-theme 'Paper' -show-icons -show drun"
-WEB = "firefox"
 FILE_MANAGER = "pcmanfm --no-desktop -n"
-CLIPBOARD_MANAGER = "rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}'"
-PASSWORD_MANAGER = "bitwarden-desktop"
 SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
-ZOOM_UTILITY = "boomer"
 CALCULATOR = "gnome-calculator"
 CALENDAR = "gnome-calendar"
+SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
-WEB_QUICK_OPEN = os.path.expanduser(
-    "~/.scripts/bin/firefox-quick-keywords"
-)
-COLOR_PICKER = os.path.expanduser(
-    "~/.scripts/bin/clip-color"
-)
-EMOJI_LAUNCHER = os.path.expanduser(
-    "~/.scripts/bin/clip-moji"
-)
-SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
 keys = [
-    # Launch programs
-    Key([MOD], "Return", lazy.spawn(TERMINAL), desc="Launch terminal"),
-    Key([MOD], "r", lazy.spawn(LAUNCHER), desc="Open application launcher"),
-    Key([MOD], "w", lazy.spawn(WEB), desc="Open web browser"),
-    Key([MOD], "p", lazy.spawn(WEB_QUICK_OPEN), desc="Open web browser quick launcher"),
-    Key([MOD], "f", lazy.spawn(FILE_MANAGER), desc="Open file manager"),
-    Key([MOD], "b", lazy.spawn(PASSWORD_MANAGER), desc="Open password manager"),
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
     # Switch between windows
@@ -53,24 +32,13 @@ keys = [
     Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
     Key([ALT], "Tab", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns.
-    Key(
-        [MOD, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
-    ),
-    Key(
-        [MOD, "shift"],
-        "l",
-        lazy.layout.shuffle_right(),
-        desc="Move window to the right",
-    ),
+    Key([MOD, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([MOD, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([MOD, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([MOD, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow and shrink windows.
-    Key(
-        [MOD, "control"], "h", lazy.layout.shrink_main(), desc="Grow window to the left"
-    ),
-    Key(
-        [MOD, "control"], "l", lazy.layout.grow_main(), desc="Grow window to the right"
-    ),
+    Key([MOD, "control"], "h", lazy.layout.shrink_main(), desc="Grow window to the left"),
+    Key([MOD, "control"], "l", lazy.layout.grow_main(), desc="Grow window to the right"),
     Key([MOD, "control"], "j", lazy.layout.shrink_main(), desc="Grow window down"),
     Key([MOD, "control"], "k", lazy.layout.grow_main(), desc="Grow window up"),
     Key([MOD], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
@@ -87,11 +55,6 @@ keys = [
     Key([MOD], "BackSpace", lazy.spawn(POWER_MENU), desc="Open power menu"),
     Key([], "Print", lazy.spawn(SCREENSHOT), desc="Take a screenshot of all the screens"),
     Key([MOD], "Print", lazy.spawn(SCREENSHOT_UTILITY), desc="Open screenshot utility"),
-    Key([MOD], "equal", lazy.spawn(ZOOM_UTILITY), desc="Open zoom utility"),
-    # Clipboard
-    Key([MOD, "shift"], "c", lazy.spawn(CLIPBOARD_MANAGER), desc="Launch clipboard manager"),
-    Key([MOD, ALT], "c", lazy.spawn(COLOR_PICKER), desc="Launch colorpicker"),
-    Key([MOD, "shift"], "e", lazy.spawn(EMOJI_LAUNCHER), desc="Launch emoji launcher"),
     # Media
     Key([], "XF86AudioPlay", lazy.spawn(f"{MEDIA_CONTROL} play"), desc="Media control - play"),
     Key([], "XF86AudioStop", lazy.spawn(f"{MEDIA_CONTROL} stop"), desc="Media control - stop"),
