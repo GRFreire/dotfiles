@@ -20,7 +20,7 @@ SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
 ZOOM_UTILITY = "boomer"
 CALCULATOR = "gnome-calculator"
-CALENDAR = "gsimplecal"
+CALENDAR = "gnome-calendar"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
