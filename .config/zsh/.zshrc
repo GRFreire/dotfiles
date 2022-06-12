@@ -93,6 +93,9 @@ bindkey -s '^[^f' 'ranger\n'
 # Alias btw to neofetch
 alias btw="neofetch"
 
+# Alias for qrcode
+alias qrcode="qrencode -s 10 -l H"
+
 # This loads nvm
 source $HOME/.config/fast-nvm.sh
 source $NVM_DIR/bash_completion
