@@ -58,19 +58,6 @@ export GOPATH="$HOME/.go"
 export GOPATH="$GOPATH:$HOME/Projects/thirdparty/go"
 export GOPATH="$GOPATH:$HOME/Projects/go"
 
-# Android Studio
-export JAVA_HOME="/usr/lib/jvm/default"
-export ANDROID_HOME="$HOME/Android/Sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:~/android-studio/bin"
-
-# SPICETIFY (SPOTIFY)
-export SPICETIFY_INSTALL="$HOME/spicetify-cli"
-export PATH="$SPICETIFY_INSTALL:$PATH"
-
 # Use custom mono path (C#)
 export FrameworkPathOverride=/etc/mono/4.5
 
