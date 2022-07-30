@@ -12,6 +12,9 @@ super + f
 super + b
     bitwarden-desktop
 
+super + o ; {c,m}
+    {code,mailspring}
+
 super + equal
     boomer
 
