@@ -45,6 +45,8 @@ try_export_path "$HOME/.scripts/bin"
 
 try_export_path "$HOME/.bin"
 
+try_export_path "$HOME/.opt/bin"
+
 try_export_path "$HOME/.local/bin"
 
 try_export_path "$HOME/.yarn/bin"
