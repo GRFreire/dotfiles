@@ -31,6 +31,7 @@ keys = [
     Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
     Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
     Key([ALT], "Tab", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([MOD], "dead_grave", lazy.next_screen(), desc="Move window focus to other screen"),
     # Move windows between left/right columns.
     Key([MOD, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([MOD, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),

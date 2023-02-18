@@ -18,4 +18,4 @@ for key in c.keys:
     desc = key.desc
     matrix.append([keys, desc])
 
-os.system(f"echo \"{columnate(matrix)}\" | col -bx | xargs -I \"[]\" printf \"\t%s\n\" \"[]\" | less")
+os.system(f"echo \"{columnate(matrix).replace('`', '̀ ')}\" | col -bx | xargs -I \"[]\" printf \"\t%s\n\" \"[]\" | less")
