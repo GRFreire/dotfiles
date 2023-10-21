@@ -66,3 +66,6 @@ export FrameworkPathOverride=/etc/mono/4.5
 # Path for cuda
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/cuda/lib64"
 
+# Solve some issue with man pages rendering
+export GROFF_NO_SGR=1
+
