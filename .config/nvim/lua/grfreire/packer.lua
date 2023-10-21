@@ -1,3 +1,5 @@
+-- To update packages, load the file with `:so` and then update via `:PackerSync`
+--
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
