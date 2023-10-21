@@ -111,14 +111,14 @@ for i, (mod, k) in enumerate(sp_keys, 0):
     keys.append(Key(mod, *k, lazy.group['scratchpad'].dropdown_toggle(name), desc=f"Open {name} scratchpad"))
 
 colors = {
-    "background": "#1A1B26",
-    "background_highlight": "#24283B",
-    "text": "#D4D8EA",
-    "accent_color_dark": "#1B294B",
-    "accent_color_light": "#495C88",
-    "accent_highlight": "#203769",
-    "active": "#7AA2F7",
-    "inactive": "#565f89",
+    "background": "#1E1E1E",
+    "background_highlight": "#241F31",
+    "text": "#DEDDDA",
+    "accent_color_dark": "#4A3321",
+    "accent_color_light": "#6E4D31",
+    "accent_highlight": "#63452C",
+    "active": "#B5835A",
+    "inactive": "#DEDDDA",
 }
 
 layout_theme = {
@@ -232,7 +232,7 @@ def group_box():
         highlight_method="line",
         rounded=False,
         active=colors["active"],
-        inactive=colors["text"],
+        inactive=colors["inactive"],
         highlight_color=colors["background_highlight"],
         this_current_screen_border=colors["active"],
         this_screen_border=colors["accent_highlight"],
@@ -327,8 +327,8 @@ def aux_bar():
 
 
 screens = [
-    Screen(top=bar.Bar(main_bar(), 28)),
-    Screen(top=bar.Bar(aux_bar(), 28)),
+    Screen(top=bar.Bar(main_bar(), 30)),
+    Screen(top=bar.Bar(aux_bar(), 32)),
 ]
 
 # Drag floating layouts.
