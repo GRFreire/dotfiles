@@ -1,7 +1,7 @@
 [user]
   email = dev@grfreire.com
   name = Guilherme Rugai Freire
-  signingkey = 0EDABAE716030BEB9AC88696C246288AC51220BC
+  signingkey = 331EDD6F7E27C86CD427AA27AC1D9B6E48E16AC1
 
 [core]
   editor = $EDITOR
