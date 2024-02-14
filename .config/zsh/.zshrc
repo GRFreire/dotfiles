@@ -8,7 +8,9 @@ export ZSH="$HOME/.local/share/ohmyzsh"
 source $ZSH/oh-my-zsh.sh
 
 # Load cargo env
-. "$CARGO_HOME/env"
+if [ -d "$CARGO_HOME" ]; then
+    . "$CARGO_HOME/env"
+fi
 
 # Set cursor to beam shape
 echo -ne '\e[5 q'
@@ -102,9 +104,13 @@ alias btw="neofetch"
 # Alias for qrcode
 alias qrcode="qrencode -s 10 -l H"
 
-# This loads nvm
-source $HOME/.config/fast-nvm.sh
-source $NVM_DIR/bash_completion
+# This loads fnm/nvm
+if [ $(command -v fnm) ]; then
+    eval "$(fnm env --use-on-cd)"
+else
+    source $HOME/.config/fast-nvm.sh
+    source $NVM_DIR/bash_completion
+fi
 
 # Check if is integrated terminal emulator
 if [ "$EMULATOR" = "code" ]; then
