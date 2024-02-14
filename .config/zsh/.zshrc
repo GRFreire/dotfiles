@@ -31,7 +31,11 @@ export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_"
 
 # Fzf keybinds
 # <CTRL+R> search history of shell commands
-source /usr/share/fzf/key-bindings.zsh
+if [ $OS_RELEASE = "debian" ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+else
+    source /usr/share/fzf/key-bindings.zsh
+fi
 
 # Alias config to manage dotfiles with git
 alias config="git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME"
@@ -49,7 +53,7 @@ fzf_fast_file_edit() {
   config_files="$(config ls-tree -r "$current_branch" --name-only "$HOME")"
 
   # Select file
-  selected_file=$(printf "%s\n%s" "$scripts" "$config_files" | fzf --info=inline --prompt='Select a file: ' --preview='bat --paging=never --style=plain --color=always {}')
+  selected_file=$(printf "%s\n%s" "$scripts" "$config_files" | fzf --info=inline --prompt='Select a file: ' --preview="$bat_cmd --paging=never --style=plain --color=always {}")
 
   
   if [ -n "$selected_file" ]; then
@@ -63,14 +67,15 @@ alias python="python3"
 alias pip="pip3"
 
 # Alias to bat instead of cat
-alias cat="bat --paging=never --style=header,grid"
+[ $OS_RELEASE = "debian" ] && bat_cmd="batcat" || bat_cmd="bat"
+alias cat="$bat_cmd --paging=never --style=header,grid"
 
 # Alias to exa instead of ls
 alias ls="exa --color=always --icons --group-directories-first"
 alias tree="ls --tree"
 
 # Alias to bat instead of less
-alias less="bat -p --paging=always"
+alias less="$bat_cmd -p --paging=always"
 
 # Alias to nvim instead of vim
 alias vim="nvim"
