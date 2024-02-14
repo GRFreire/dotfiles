@@ -4,7 +4,7 @@ source ~/.profile
 ZSH_THEME="robbyrussell"
 
 # Oh my zsh
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.local/share/ohmyzsh"
 source $ZSH/oh-my-zsh.sh
 
 # Load cargo env
@@ -19,7 +19,8 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 export HISTORY_IGNORE="ce"
 
 ### zinit plugins - start
-source $HOME/.zinit/bin/zinit.zsh
+ZINIT_PATH="$HOME/.local/share/zinit"
+source $ZINIT_PATH/zinit.zsh
 
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
