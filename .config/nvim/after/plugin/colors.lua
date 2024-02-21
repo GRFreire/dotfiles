@@ -1,5 +1,5 @@
 function SetColor(color)
-	color = color or "rose-pine"
+	color = color or "oxocarbon"
 	vim.cmd.colorscheme(color)
 
 	-- Transparent background

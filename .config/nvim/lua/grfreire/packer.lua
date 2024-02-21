@@ -16,12 +16,12 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    -- Rose-pine colorscheme
     use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
+        "nyoom-engineering/oxocarbon.nvim",
+        as = "oxocarbon",
+        config = function ()
+            vim.opt.background = "dark"
+            vim.cmd('colorscheme oxocarbon')
         end
     })
 
