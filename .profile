@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export OS_RELEASE="$(cat /etc/os-release | grep '^ID=' | sed 's|ID=||')"
+
 ### SET PATHS ###
 
 # XDG Defaults
@@ -26,9 +28,11 @@ export ZDOTDIR="$HOME"/.config/zsh
 eval `ssh-agent -s` > /dev/null
 
 ### Default programs ###
+[ $OS_RELEASE = "debian" ] && bat_cmd="batcat" || bat_cmd="bat"
+
 export EDITOR="nvim"
 export READER="zathura"
-export MANPAGER="sh -c 'col -bx | bat -l man --paging always -p'"
+export MANPAGER="sh -c \"col -bx | $bat_cmd -l man --paging always -p\""
 export TERMINAL="alacritty"
 export BROWSER="firefox"
 export VIDEO="mpv"
