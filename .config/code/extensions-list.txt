@@ -10,12 +10,16 @@ EditorConfig.EditorConfig
 enkia.tokyo-night
 iampeterbanjo.elixirlinter
 JakeBecker.elixir-ls
+janjoerke.align-by-regex
 jeff-hykin.better-cpp-syntax
+josetr.cmake-language-support-vscode
 jpoissonnier.vscode-styled-components
 mechatroner.rainbow-csv
+miguelsolorio.min-theme
 mikestead.dotenv
 ms-azuretools.vscode-docker
 ms-dotnettools.csharp
+ms-dotnettools.vscode-dotnet-runtime
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode-remote.remote-containers
@@ -26,6 +30,8 @@ ms-vscode.cmake-tools
 ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
+ms-vscode.hexeditor
+ms-vscode.remote-explorer
 ms-vsliveshare.vsliveshare
 naumovs.color-highlight
 nico-castell.linux-desktop-file
