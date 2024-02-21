@@ -10,6 +10,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # Other applications
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GOPATH="$XDG_DATA_HOME"/go
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
@@ -53,12 +54,10 @@ try_export_path "$HOME/.yarn/bin"
 
 try_export_path "$CARGO_HOME/bin"
 
+try_export_path "$GOPATH/bin"
+
 # Fzf options
 export FZF_DEFAULT_OPTS="--reverse --cycle --margin 0,1"
-
-export GOPATH="$HOME/.go"
-export GOPATH="$GOPATH:$HOME/Projects/thirdparty/go"
-export GOPATH="$GOPATH:$HOME/Projects/go"
 
 # Use custom mono path (C#)
 export FrameworkPathOverride=/etc/mono/4.5
