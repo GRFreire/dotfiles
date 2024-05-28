@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Greenclip
 GenericName=Clipboard manager
-Exec="/usr/bin/greenclip" daemon
+Exec=/home/grfreire/.opt/bin/greenclip daemon
 Terminal=false
 Categories=Utility
 Type=Application
 StartupNotify=false
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=5
