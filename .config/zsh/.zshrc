@@ -8,7 +8,7 @@ export ZSH="$HOME/.local/share/ohmyzsh"
 source $ZSH/oh-my-zsh.sh
 
 # Load cargo env
-if [ -d "$CARGO_HOME" ]; then
+if [ -d "$CARGO_HOME/env" ]; then
     . "$CARGO_HOME/env"
 fi
 
