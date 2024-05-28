@@ -2,7 +2,6 @@ import time
 import os
 import subprocess
 import psutil
-from typing import List  # noqa: F401
 
 from libqtile import bar, layout, widget, qtile, hook
 from libqtile.config import Click, Drag, Group, ScratchPad, DropDown, Key, Match, Screen
@@ -20,8 +19,13 @@ SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
+CHECK_UPDATES = os.path.expanduser(
+    "~/.scripts/bin/check_updates"
+)
 
 MEDIA_CONTROL = os.path.expanduser("~/.config/qtile/media_control.sh")
+MONITOR_CONTROL = os.path.expanduser("~/.config/qtile/monitor_control.sh")
+
 keys = [
     # Closes window.
     Key([MOD], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -63,6 +67,8 @@ keys = [
     Key([], "XF86AudioPrev", lazy.spawn(f"{MEDIA_CONTROL} prev"), desc="Media control - prev"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn(f"{MEDIA_CONTROL} vol_up"), desc="Media control - volume up"),
     Key([], "XF86AudioLowerVolume", lazy.spawn(f"{MEDIA_CONTROL} vol_down"), desc="Media control - volume down"),
+    Key([], "XF86MonBrightnessUp", lazy.spawn(f"{MONITOR_CONTROL} b_up"), desc="Monitor control - brihtness up"),
+    Key([], "XF86MonBrightnessDown", lazy.spawn(f"{MONITOR_CONTROL} b_down"), desc="Monitor control - brihtness down"),
     Key([], "XF86AudioMute", lazy.spawn(f"{MEDIA_CONTROL} vol_mute"), desc="Media control - mute volume"),
 ]
 
@@ -174,7 +180,7 @@ def generate_bar(left=[], right=[]):
         )
         widgets.append(
             widget.TextBox(
-                text="", background=bg, foreground=fg, padding=0, fontsize=60
+                text="", background=bg, foreground=fg, padding=-8, fontsize=60
             )
         )
 
@@ -259,7 +265,7 @@ def main_bar():
             [
                 widget.TextBox(text="⟳", fontsize=18),
                 widget.CheckUpdates(
-                    distro="Arch", custom_command="checkupdates", display_format="{updates} Updates"
+                    distro="Debian", custom_command=CHECK_UPDATES, display_format="{updates} Updates"
                 ),
             ],
             [
@@ -267,13 +273,15 @@ def main_bar():
                 widget.CurrentLayout(),
             ],
             [
-                widget.Memory(format='Memory {MemPercent}%'),
+                widget.Memory(format='Mem {MemPercent}%'),
+                widget.CPU(format='CPU {load_percent}%'),
+                widget.ThermalSensor(fmt='Temp {}'),
             ],
             [
                 widget.TextBox(
                     text="Volume:",
                     mouse_callbacks={
-                        "Button1": lambda: qtile.cmd_spawn(
+                        "Button1": lambda: qtile.spawn(
                             "amixer -q -D pulse sset Master toggle"
                         )
                     },
@@ -283,15 +291,19 @@ def main_bar():
             [
                 widget.Clock(
                     format="%d / %m / %y",
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(CALENDAR)},
+                    mouse_callbacks={"Button1": lambda: qtile.spawn(CALENDAR)},
                 ),
                 widget.Clock(format="%I:%M %p", font=FONT + " Bold"),
+            ],
+            [
+                widget.BatteryIcon(),
+                widget.Battery(format='{percent:2.0%} {hour:d}h{min:02d}m'),
             ],
             [
                 widget.TextBox(
                     text="⏻",
                     fontsize=22,
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(POWER_MENU)},
+                    mouse_callbacks={"Button1": lambda: qtile.spawn(POWER_MENU)},
                 ),
             ],
         ],
@@ -319,7 +331,7 @@ def aux_bar():
             ),
             widget.Clock(
                 format="%d / %m / %y",
-                mouse_callbacks={"Button1": lambda: qtile.cmd_spawn(CALENDAR)},
+                mouse_callbacks={"Button1": lambda: qtile.spawn(CALENDAR)},
             ),
             widget.Clock(format="%I:%M %p", font=FONT + " Bold"),
         ]
