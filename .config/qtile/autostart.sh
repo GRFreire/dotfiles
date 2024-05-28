@@ -27,6 +27,9 @@ nm-applet &
 # Set up wacom tablet
 autoxsetwacom
 
+# Run hotkey deamon
+sxhkd &
+
 # Run xidlehook
 xidlehook \
   `# Don't lock when there's a fullscreen application` \
