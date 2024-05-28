@@ -12,8 +12,8 @@ super + f
 super + b
     bitwarden-desktop
 
-super + o ; {c,m}
-    {code,mailspring}
+super + o ; {m, w, c}
+    {thunderbird, libreoffice --writer, libreoffice --calc}
 
 super + equal
     boomer
