@@ -1,5 +1,8 @@
 import = ["/home/grfreire/.config/alacritty/themes/tokyo-night.toml"]
 
+[font]
+size = 24
+
 [font.normal]
 family = "Cascadia Code"
 
