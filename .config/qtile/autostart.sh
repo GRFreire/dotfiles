@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start polkit agent
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+lxpolkit &
 
 # Enable numlock
 /usr/bin/numlockx
@@ -20,6 +20,9 @@ conky &
 
 # Start network manager applet (systray)
 nm-applet &
+
+# Start bluetooth manager applet (systray)
+blueman-applet &
 
 # Start volume bar
 ~/.config/xob/volume.sh &
