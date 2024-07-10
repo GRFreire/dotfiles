@@ -15,7 +15,7 @@ SCREENSHOT = "gnome-screenshot"
 SCREENSHOT_UTILITY = "gnome-screenshot -i"
 CALCULATOR = "gnome-calculator"
 CALENDAR = "gnome-calendar"
-SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e python3 /home/grfreire/.config/qtile/list_keybinds.py"
+SHOW_KEYBINDS = f"{TERMINAL} -t Keybinds -e /home/grfreire/Projects/thirdparty/qtile/.venv/bin/python3 /home/grfreire/.config/qtile/list_keybinds.py"
 POWER_MENU = os.path.expanduser(
     "~/.scripts/bin/simple-power-menu"
 )
