@@ -4,7 +4,7 @@ import = ["/home/grfreire/.config/alacritty/themes/tokyo-night.toml"]
 size = 24
 
 [font.normal]
-family = "Cascadia Code"
+family = "Iosevka"
 
 [scrolling]
 history = 100000
