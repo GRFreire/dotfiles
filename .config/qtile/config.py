@@ -35,7 +35,7 @@ keys = [
     Key([MOD], "j", lazy.layout.down(), desc="Move focus down"),
     Key([MOD], "k", lazy.layout.up(), desc="Move focus up"),
     Key([ALT], "Tab", lazy.layout.next(), desc="Move window focus to other window"),
-    Key([MOD], "dead_grave", lazy.next_screen(), desc="Move window focus to other screen"),
+    Key([MOD], "apostrophe", lazy.next_screen(), desc="Move window focus to other screen"),
     # Move windows between left/right columns.
     Key([MOD, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([MOD, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
@@ -420,7 +420,9 @@ def try_swallow(window):
         Match(wm_class="Alacritty"),
     ]
 
-    not_swallow=[]
+    not_swallow=[
+        Match(wm_class="voide-settings")
+    ]
 
     if any(window.match(rule) for rule in not_swallow):
         return
@@ -468,24 +470,21 @@ def toggle_swallow(window):
 def try_regroup_window(client):
     time.sleep(0.01)
     apps_wm_class = {
-        "google-chrome": "WWW",
         "Navigator": "WWW",
-        "code": "DEV",
+        "chromium": "WWW",
+        "wireshark": "DEV",
         "Steam": "GMG",
         "heroic": "GMG",
-        "lutris": "GMG",
-        "nitrogen": "SYS",
         "VirtualBox Manager": "SYS",
         "virt-manager": "SYS",
         "baobab": "SYS",
         "gnome-disks": "SYS",
-        "gedit": "DOC",
-        "discord": "CHAT",
-        "microsoft teams - preview": "CHAT",
-        "spotify": "MUS",
+        "gnome-system-monitor": "SYS",
+        "gnome-text-editor": "DOC",
+        "libreoffice": "DOC",
+        "Mail": "CHAT",
         "obs": "VID",
-        "ghb": "VID",
-        "resolve": "EDT",
+        "shotcut": "EDT",
         "audacity": "EDT",
         "krita": "EDT",
         "mypaint": "EDT",
@@ -493,8 +492,7 @@ def try_regroup_window(client):
 
     # Notion for class is notion-nativefier-xxxx for example
     apps_wm_class_incomplete = {
-        "notion": "DOC",
-        "todoist": "DOC",
+        "burp": "DEV",
     }
 
     wm_class = client.window.get_wm_class()[0]
