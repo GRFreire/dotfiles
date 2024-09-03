@@ -18,6 +18,9 @@ feh --bg-scale --no-fehbg ~/.config/wall.png
 # Start conky
 conky &
 
+# Start X settings deamon
+xsettingsd -c ~/.config/xsettingsd/xsettingsd.conf &
+
 # Start network manager applet (systray)
 nm-applet &
 
