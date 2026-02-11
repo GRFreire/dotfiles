@@ -1,10 +1,11 @@
-function SetColor(color)
-	color = color or "oxocarbon"
-	vim.cmd.colorscheme(color)
-
-	-- Transparent background
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+function setTheme(theme)
+	if theme == 'bamboo' then
+		require('bamboo').setup({});
+		require('bamboo').load();
+	elseif theme == 'sonokai' then
+		vim.cmd 'colorscheme sonokai';
+		vim.opt.termguicolors = false;
+	end
 end
 
-SetColor()
+setTheme('sonokai')
