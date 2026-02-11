@@ -1,2 +1,2 @@
-5 */2 * * * /usr/bin/pacman -Syuw --noconfirm
+5 */2 * * * apt-get update
 */30 * * * * /usr/bin/updatedb

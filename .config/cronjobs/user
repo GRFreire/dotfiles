@@ -1,2 +1,2 @@
-*/20 * * * * /usr/bin/newsboat -x reload
-0 */2 * * * $HOME/.config/code/update-extensions.sh
+*/5 * * * * XDG_RUNTIME_DIR=/run/user/$(id -u) /home/grfreire/.scripts/bin/check_battery
+
