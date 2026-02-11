@@ -36,6 +36,12 @@ autoxsetwacom
 # Run hotkey deamon
 sxhkd &
 
+# Make sure I always have a display active
+~/.scripts/bin/display-restore loop &
+
+# Run audio effects
+easyeffects --gapplication-service &
+
 # Run xidlehook
 xidlehook \
   `# Don't lock when there's a fullscreen application` \
