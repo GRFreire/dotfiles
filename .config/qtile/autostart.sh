@@ -7,7 +7,7 @@ lxpolkit &
 /usr/bin/numlockx
 
 # Start compositor
-(sleep 1 && picom --experimental-backends) &
+(sleep 1 && picom) &
 
 # Start notification server
 dunst &
