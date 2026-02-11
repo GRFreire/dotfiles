@@ -153,8 +153,8 @@ extension_defaults = widget_defaults.copy()
 
 
 def generate_bar(left=[], right=[]):
-    current_bg_color = colors["background"]
-    current_fg_color = colors["text"]
+    bg_color = colors["background"]
+    fg_color = colors["text"]
 
     widgets = []
 
@@ -164,23 +164,7 @@ def generate_bar(left=[], right=[]):
                 padding=0,
                 size_percent=100,
                 linewidth=width,
-                foreground=current_bg_color,
-            )
-        )
-
-    def create_arrow(bg=current_bg_color, fg=current_fg_color):
-        widgets.append(
-            widget.Sep(
-                padding=0,
-                size_percent=100,
-                linewidth=10,
-                background=fg,
-                foreground=bg,
-            )
-        )
-        widgets.append(
-            widget.TextBox(
-                text="", background=bg, foreground=fg, padding=-8, fontsize=60
+                foreground=bg_color,
             )
         )
 
@@ -189,38 +173,19 @@ def generate_bar(left=[], right=[]):
     for w in left:
         widgets.append(w)
 
-    create_sep(4)
-
-    is_even = True
-    is_first_widget = True
-    for g in right:
-        if is_even:
-            current_bg_color = colors["accent_color_dark"]
-            is_even = False
-        else:
-            current_bg_color = colors["accent_color_light"]
-            is_even = True
-
-        if is_first_widget:
-            create_arrow(colors["background"], colors["accent_color_dark"])
-
-            is_first_widget = False
-        else:
-            create_arrow(
-                colors["accent_color_dark"]
-                if is_even
-                else colors["accent_color_light"],
-                colors["accent_color_light"]
-                if is_even
-                else colors["accent_color_dark"],
-            )
-
-        for w in g:
-            w.background = current_bg_color
-            w.foreground = current_fg_color
-            widgets.append(w)
-
     create_sep()
+
+    bg_color = colors["accent_color_dark"]
+    fg_color = colors["text"]
+
+    create_sep(5)
+
+    for g in right:
+        for w in g:
+            w.background = bg_color
+            w.foreground = fg_color
+            widgets.append(w)
+        create_sep(15)
 
     return widgets
 
@@ -304,6 +269,7 @@ def main_bar():
                     text="⏻",
                     fontsize=22,
                     mouse_callbacks={"Button1": lambda: qtile.spawn(POWER_MENU)},
+                    padding=10
                 ),
             ],
         ],
