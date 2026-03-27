@@ -1,36 +1,68 @@
 source ~/.profile
 
-# Themes
-ZSH_THEME="robbyrussell"
+autoload -Uz compinit colors vcs_info select-word-style
 
-# Oh my zsh
-export ZSH="$HOME/.local/share/ohmyzsh"
-source $ZSH/oh-my-zsh.sh
+# Keybinds
+bindkey -e
+select-word-style bash
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[3;5~' kill-word   # Ctrl+Delete
+
+# Prompt
+colors
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '%F{blue}git(%F{red}%b%F{blue})%f '
+setopt PROMPT_SUBST
+PROMPT='%(?.%F{green}.%F{red})%B➜  %F{cyan}%1~%f %F{yellow}${vcs_info_msg_0_}%f%b'
+
+# Set cursor to beam shape
+echo -ne '\e[5 q'
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+
+# Keybinds up and down to cicle suggestions
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
+
+# Completion
+compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list \
+  'm:{a-z}={A-Za-z} m:{-_}={_-}' \
+  'r:|=*' \
+  'l:|=*'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors 'di=34'
+
+### zinit plugins - start
+ZINIT_PATH="$HOME/.local/share/zinit"
+if [ ! -d "$ZINIT_PATH" ]; then
+    echo "could not find ZINIT_PATH=$ZINIT_PATH"
+else
+    source $ZINIT_PATH/zinit.zsh
+
+    zinit light zsh-users/zsh-completions
+    zinit light zsh-users/zsh-autosuggestions
+    zinit light zdharma-continuum/fast-syntax-highlighting
+fi
+### zinit plugins - end
 
 # Load cargo env
 if [ -d "$CARGO_HOME/env" ]; then
     . "$CARGO_HOME/env"
 fi
-
-# Set cursor to beam shape
-echo -ne '\e[5 q'
-
-# ZSH Specific
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-
-export HISTORY_IGNORE="ce"
-
-### zinit plugins - start
-ZINIT_PATH="$HOME/.local/share/zinit"
-source $ZINIT_PATH/zinit.zsh
-
-zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light djui/alias-tips
-### zinit plugins - end
-
-export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_"
 
 # Fzf keybinds
 # <CTRL+R> search history of shell commands
