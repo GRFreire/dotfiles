@@ -7,7 +7,10 @@ super + w
     $BROWSER
 
 super + f
-    pcmanfm --no-desktop -n
+    pcmanfm --no-desktop -n ~
+
+super + c
+    gnome-calculator
 
 super + o ; {m}
     {thunderbird}
@@ -15,17 +18,17 @@ super + o ; {m}
 super + equal
     boomer
 
-super + r
-    rofi -icon-theme 'Paper' -show-icons -show drun
+super + d
+    dmenu_run
+
+Print
+    maim | tee ~/Pictures/Screenshots/Screenshot_$(date +"%Y%m%d-%H%M%S").png | xclip -selection clipboard -t image/png
+
+super + Print
+    maim -s | tee ~/Pictures/Screenshots/Screenshot_$(date +"%Y%m%d-%H%M%S").png | xclip -selection clipboard -t image/png
 
 super + shift + c
-    rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
-
-super + alt + c
-    ~/.scripts/bin/clip-color
-
-super + shift + e
-    ~/.scripts/bin/clip-moji
+    ~/.scripts/bin/clipboard_mngr
 
 ctrl + alt + t
     ~/.scripts/bin/restart-touchpad --notify
